@@ -1,23 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Grammar Fixer</title>
+    <meta name="description"
+        content="Free online AI grammar checker and fixer. Correct your English grammar instantly with our advanced AI tool.">
+    <meta name="keywords"
+        content="grammar fixer, AI grammar checker, correct grammar, English grammar correction, online grammar tool, grammar correction">
+    <meta name="author" content="Sajib">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://translatedby-ai.netlify.app/grammerfixer">
+    <meta property="og:title" content="AI Grammar Fixer">
+    <meta property="og:description"
+        content="Free online AI grammar checker and fixer. Correct your English grammar instantly with our advanced AI tool.">
+    <meta property="og:image" content="https://translatedby-ai.netlify.app/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://translatedby-ai.netlify.app/grammerfixer">
+    <meta property="twitter:title" content="AI Grammar Fixer">
+    <meta property="twitter:description"
+        content="Free online AI grammar checker and fixer. Correct your English grammar instantly with our advanced AI tool.">
+    <meta property="twitter:image" content="https://translatedby-ai.netlify.app/og-image.jpg">
+    <link rel="canonical" href="https://translatedby-ai.netlify.app/grammerfixer">
     <style>
         :root {
             --bg: #000000;
-            --grid: rgba(255,255,255,0.03);
-            --card-bg: rgba(255,255,255,0.02);
+            --grid: rgba(255, 255, 255, 0.03);
+            --card-bg: rgba(255, 255, 255, 0.02);
             --text: #FFFFFF;
-            --muted: rgba(255,255,255,0.85);
+            --muted: rgba(255, 255, 255, 0.85);
             --input-bg: #040404;
-            --border: rgba(255,255,255,0.08);
-            --shadow: 0 10px 30px rgba(0,0,0,0.8);
+            --border: rgba(255, 255, 255, 0.08);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
             --primary: #FFFFFF;
             --primary-hover: #E6E6E6;
-            --success-bg: rgba(34,197,94,0.12);
-            --error-bg: rgba(239,68,68,0.12);
+            --success-bg: rgba(34, 197, 94, 0.12);
+            --error-bg: rgba(239, 68, 68, 0.12);
         }
 
         body {
@@ -80,13 +103,13 @@
         }
 
         textarea::placeholder {
-            color: rgba(255,255,255,0.55);
+            color: rgba(255, 255, 255, 0.55);
         }
 
         textarea:focus {
             outline: none;
             border-color: var(--primary-hover);
-            box-shadow: 0 6px 20px rgba(255,255,255,0.04);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.04);
         }
 
         button {
@@ -108,7 +131,7 @@
         }
 
         button:hover {
-            background-color: rgba(255,255,255,0.03);
+            background-color: rgba(255, 255, 255, 0.03);
             border-color: var(--primary-hover);
             transform: translateY(-1px);
         }
@@ -118,7 +141,7 @@
         }
 
         button:disabled {
-            background-color: rgba(255,255,255,0.01);
+            background-color: rgba(255, 255, 255, 0.01);
             cursor: not-allowed;
             opacity: 0.7;
         }
@@ -131,6 +154,7 @@
             border-style: dashed;
             opacity: 0.8;
         }
+
         #copyBtn:hover {
             opacity: 1;
             border-style: solid;
@@ -149,19 +173,33 @@
             min-height: 20px;
             color: var(--text);
         }
-        
-        .error { background: var(--error-bg); color: var(--text); padding: 6px 10px; border-radius: 6px; display: inline-block; }
-        .success { background: var(--success-bg); color: var(--text); padding: 6px 10px; border-radius: 6px; display: inline-block; }
 
+        .error {
+            background: var(--error-bg);
+            color: var(--text);
+            padding: 6px 10px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .success {
+            background: var(--success-bg);
+            color: var(--text);
+            padding: 6px 10px;
+            border-radius: 6px;
+            display: inline-block;
+        }
     </style>
 </head>
+
 <body>
 
     <div class="container">
         <h1> AI Grammar Fixer</h1>
-        
+
         <label for="inputText">Enter your text:</label>
-        <textarea id="inputText" rows="5" placeholder="Type or paste text here (e.g. 'I has went to store yesterday.')"></textarea>
+        <textarea id="inputText" rows="5"
+            placeholder="Type or paste text here (e.g. 'I has went to store yesterday.')"></textarea>
 
         <button id="fixBtn" onclick="fixGrammar()">Fix My Grammar</button>
 
@@ -170,9 +208,13 @@
         <div class="output-group">
             <label for="outputText">Corrected Version:</label>
             <textarea id="outputText" rows="5" readonly placeholder="Result will appear here..."></textarea>
-            
+
             <button id="copyBtn" onclick="copyToClipboard()" disabled>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
                 Copy to Clipboard
             </button>
         </div>
@@ -240,11 +282,11 @@
 
             try {
                 await navigator.clipboard.writeText(outputText.value);
-                
+
                 // Visual Feedback
                 copyBtn.textContent = "Copied!";
                 copyBtn.style.borderColor = "var(--success-bg)";
-                
+
                 // Reset after 2 seconds
                 setTimeout(() => {
                     copyBtn.innerHTML = originalText;
@@ -258,4 +300,5 @@
         }
     </script>
 </body>
+
 </html>
