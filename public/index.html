@@ -2,34 +2,123 @@
 <html lang="en">
 
 <head>
- <meta name="google-site-verification" content="a1sG3keunZPWV6rhBixmpvQE8-5QFB2cuCeWWYy7MCM" />
-   
+    <meta name="google-site-verification" content="a1sG3keunZPWV6rhBixmpvQE8-5QFB2cuCeWWYy7MCM" />
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Language Translator</title>
-    <meta name="description" content="Free online AI language translator powered by LLM. Translate text between English, Bangla, Arabic, Hindi, and more with high accuracy.">
-    <meta name="keywords" content="AI translator, LLM translation, language translator, free online translator, English to Bangla, Arabic translation, Hindi translation">
+
+    <!-- ═══════════════════════════════════════════════
+         SEO: Expanded title, description & keywords
+    ═══════════════════════════════════════════════ -->
+    <title>AI Language Translator – Free Online LLM Translation | English, Bangla, Arabic, Hindi & More</title>
+    <meta name="description" content="Free AI-powered language translator using advanced LLMs. Instantly translate text between English, Bangla, Arabic, Hindi, Spanish, French, Chinese, Japanese and 15+ languages with high accuracy. No sign-up needed.">
+    <meta name="keywords" content="AI translator, free online translator, LLM translation, language translator, English to Bangla translator, Bangla to English, Arabic translator, Hindi translator, Spanish translator, French translator, translate text online, AI language translation, machine translation, multilingual translator">
     <meta name="author" content="Sajib">
-    
-    <!-- Open Graph / Facebook -->
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://translatedby-ai.netlify.app/">
-    <meta property="og:title" content="AI Language Translator">
-    <meta property="og:description" content="Free online AI language translator powered by LLM. Translate text between English, Bangla, Arabic, Hindi, and more with high accuracy.">
+    <meta property="og:title" content="AI Language Translator – Free LLM-Powered Translation">
+    <meta property="og:description" content="Translate between 15+ languages instantly using advanced AI. Free, accurate, and context-aware.">
     <meta property="og:image" content="https://translatedby-ai.netlify.app/og-image.jpg">
 
-    <!-- Twitter -->
+    <!-- Twitter Card -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://translatedby-ai.netlify.app/">
-    <meta property="twitter:title" content="AI Language Translator">
-    <meta property="twitter:description" content="Free online AI language translator powered by LLM. Translate text between English, Bangla, Arabic, Hindi, and more with high accuracy.">
+    <meta property="twitter:title" content="AI Language Translator – Free LLM Translation">
+    <meta property="twitter:description" content="Free AI translator supporting English, Bangla, Arabic, Hindi, Spanish, French, Chinese & more.">
     <meta property="twitter:image" content="https://translatedby-ai.netlify.app/og-image.jpg">
+
     <link rel="canonical" href="https://translatedby-ai.netlify.app/">
+
+    <!-- ═══════════════════════════════════════════════
+         SCHEMA: SoftwareApplication + FAQPage
+    ═══════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "AI Language Translator",
+      "url": "https://translatedby-ai.netlify.app/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "description": "Free AI-powered language translator that uses large language models (LLMs) to deliver accurate, context-aware translations between 15+ languages including English, Bangla, Arabic, Hindi, Spanish, French, and more.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "English to Bangla translation",
+        "Bangla to English translation",
+        "Arabic translation",
+        "Hindi translation",
+        "Spanish translation",
+        "French translation",
+        "Chinese translation",
+        "Japanese translation",
+        "PDF download of translations",
+        "Copy to clipboard",
+        "Grammar fixer",
+        "AI text cleaner"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How accurate is this AI language translator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This translator is powered by large language models (LLMs) that understand context, idioms, and nuance — making it significantly more accurate than rule-based systems. It handles sentence structure and cultural context naturally."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which languages does this AI translator support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The translator supports 16 languages: English, Bangla, Arabic, Hindi, Spanish, French, German, Chinese (Simplified), Japanese, Russian, Portuguese, Italian, Korean, Turkish, Vietnamese, and Western Punjabi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this AI translator free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the AI Language Translator is completely free. No account, sign-up, or payment is required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I translate from English to Bangla for free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Simply select English as the source language and Bangla as the target language, type or paste your text, and click Translate. The AI delivers an accurate, natural-sounding Bangla translation instantly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I download the translation as a PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. After translating, click the 'Download PDF' button to save a formatted PDF containing both the original text and the translation."
+          }
+        }
+      ]
+    }
+    </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Updated theme: modern dark glassmorphism (purple -> white) */
         :root {
             --bg-deep: #000000;
             --grid-color: rgba(255, 255, 255, 0.03);
@@ -44,10 +133,7 @@
             --border-subtle: rgba(255, 255, 255, 0.06);
         }
 
-        * {
-            box-sizing: border-box;
-            outline: none;
-        }
+        * { box-sizing: border-box; outline: none; }
 
         body {
             font-family: 'Outfit', sans-serif;
@@ -58,19 +144,15 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            /* Changed for mobile stacking */
             align-items: center;
-            justify-content: center;
-
             background-image:
                 linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
                 linear-gradient(0deg, var(--grid-color) 1px, transparent 1px),
-                radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.04) 0%, transparent 40%),
-                radial-gradient(circle at 85% 90%, rgba(255, 255, 255, 0.02) 0%, transparent 40%);
+                radial-gradient(circle at 15% 10%, rgba(255,255,255,0.04) 0%, transparent 40%),
+                radial-gradient(circle at 85% 90%, rgba(255,255,255,0.02) 0%, transparent 40%);
             background-size: 28px 28px, 28px 28px, cover, cover;
         }
 
-        /* --- NEW NAVIGATION STYLES --- */
         .top-nav {
             position: absolute;
             top: 20px;
@@ -89,24 +171,19 @@
             font-weight: 500;
             text-decoration: none;
             color: var(--text-muted);
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: 30px;
-            /* Pill shape */
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .nav-link:hover {
             color: #fff;
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.2);
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
-
-        /* ----------------------------- */
 
         .container {
             width: 100%;
@@ -117,10 +194,7 @@
             transform: translateY(-10px);
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
+        header { text-align: center; margin-bottom: 2.5rem; }
 
         h1 {
             font-size: 3rem;
@@ -130,7 +204,6 @@
             background: linear-gradient(to right, #fff, #94a3b8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
             color: var(--text-main);
         }
 
@@ -141,6 +214,26 @@
             font-weight: 300;
         }
 
+        /* ── Language badge pills ── */
+        .lang-pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 1rem;
+        }
+
+        .lang-pill {
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        /* ── Translator card ── */
         .translator-container {
             position: relative;
             background: var(--card-bg);
@@ -148,9 +241,8 @@
             -webkit-backdrop-filter: blur(14px);
             border: 1px solid var(--card-border);
             border-radius: var(--radius);
-            box-shadow: 0 8px 30px rgba(2, 6, 23, 0.7);
+            box-shadow: 0 8px 30px rgba(2,6,23,0.7);
             overflow: hidden;
-            transition: transform 0.3s ease;
         }
 
         .language-selector {
@@ -162,16 +254,9 @@
             gap: 1rem;
         }
 
-        html,
-        body {
-            color-scheme: dark;
-        }
+        html, body { color-scheme: dark; }
 
-        .select-wrapper {
-            position: relative;
-            flex: 1;
-            min-width: 120px;
-        }
+        .select-wrapper { position: relative; flex: 1; min-width: 120px; }
 
         .select-wrapper::after {
             content: "";
@@ -182,9 +267,8 @@
             height: 10px;
             pointer-events: none;
             transform: translateY(-40%) rotate(45deg);
-            border-right: 2px solid rgba(255, 255, 255, 0.7);
-            border-bottom: 2px solid rgba(255, 255, 255, 0.7);
-            opacity: 0.9;
+            border-right: 2px solid rgba(255,255,255,0.7);
+            border-bottom: 2px solid rgba(255,255,255,0.7);
         }
 
         select {
@@ -199,32 +283,17 @@
             font-size: 1rem;
             cursor: pointer;
             transition: all 0.18s ease;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02), 0 3px 10px rgba(0, 0, 0, 0.6);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 3px 10px rgba(0,0,0,0.6);
             backdrop-filter: blur(4px);
             color-scheme: dark;
-            background-clip: padding-box;
         }
 
-        select:hover {
-            border-color: rgba(255, 255, 255, 0.18);
-            background-color: rgba(255, 255, 255, 0.02);
-        }
-
+        select:hover { border-color: rgba(255,255,255,0.18); }
         select:focus {
-            border-color: rgba(255, 255, 255, 0.14);
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.02);
-            outline: none;
-            background-color: rgba(255, 255, 255, 0.02);
+            border-color: rgba(255,255,255,0.14);
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.04);
         }
-
-        select::-ms-expand {
-            display: none;
-        }
-
-        select option {
-            color: #fff;
-            background-color: #0b0b0b;
-        }
+        select option { color: #fff; background-color: #0b0b0b; }
 
         .swap-btn {
             background: transparent;
@@ -265,7 +334,7 @@
 
         .text-area-container:last-child {
             border-right: none;
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0,0,0,0.2);
         }
 
         .label-row {
@@ -296,21 +365,13 @@
             resize: none;
         }
 
-        textarea::placeholder {
-            color: rgba(255, 255, 255, 0.2);
-        }
+        textarea::placeholder { color: rgba(255,255,255,0.2); }
 
-        textarea::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        textarea::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 3px;
-        }
+        textarea::-webkit-scrollbar { width: 6px; }
+        textarea::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
 
         .copy-btn {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255,255,255,0.05);
             border: none;
             color: var(--text-muted);
             padding: 6px 12px;
@@ -323,15 +384,8 @@
             transition: all 0.2s;
         }
 
-        .copy-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-        }
-
-        .copy-btn.success {
-            color: #4ade80;
-            background: rgba(74, 222, 128, 0.1);
-        }
+        .copy-btn:hover { background: rgba(255,255,255,0.1); color: white; }
+        .copy-btn.success { color: #4ade80; background: rgba(74,222,128,0.1); }
 
         .controls {
             padding: 1.5rem;
@@ -340,7 +394,7 @@
             align-items: center;
             gap: 1rem;
             border-top: 1px solid var(--border-subtle);
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0,0,0,0.2);
         }
 
         .btn {
@@ -361,42 +415,155 @@
             border: 1px solid var(--border-subtle);
         }
 
-        .btn-secondary:hover {
-            color: white;
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
+        .btn-secondary:hover { color: white; background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); }
 
         .btn-primary {
             background: var(--primary-gradient);
             color: #000;
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 20px rgba(255,255,255,0.08);
         }
 
-        .btn-primary:hover {
-            box-shadow: 0 6px 30px rgba(255, 255, 255, 0.12);
-            transform: translateY(-2px);
-        }
-
-        .btn-primary:active {
-            transform: translateY(0);
-        }
+        .btn-primary:hover { box-shadow: 0 6px 30px rgba(255,255,255,0.12); transform: translateY(-2px); }
+        .btn-primary:active { transform: translateY(0); }
 
         .loading {
             display: inline-block;
             width: 1rem;
             height: 1rem;
-            border: 2px solid rgba(255, 255, 255, .3);
+            border: 2px solid rgba(255,255,255,.3);
             border-radius: 50%;
             border-top-color: white;
             animation: spin 1s ease-in-out infinite;
             margin-left: 0.5rem;
         }
 
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ── Feature strip ── */
+        .features-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 1.2rem 1.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .feature-card .fc-icon { font-size: 1.4rem; }
+        .feature-card .fc-title { font-size: 0.9rem; font-weight: 600; color: #fff; }
+        .feature-card .fc-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
+
+        /* ── Popular pairs ── */
+        .popular-pairs {
+            margin-top: 2rem;
+        }
+
+        .popular-pairs h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            margin-bottom: 0.9rem;
+        }
+
+        .pairs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .pair-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 0.65rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: inherit;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pair-btn:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.15);
+            color: #fff;
+        }
+
+        .pair-arrow { opacity: 0.4; font-size: 0.9rem; }
+
+        /* ── FAQ section ── */
+        .faq-section {
+            margin-top: 2.5rem;
+        }
+
+        .faq-section h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item {
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: var(--card-bg);
+            border: none;
+            color: #fff;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 1rem 1.2rem;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover { background: rgba(255,255,255,0.05); }
+
+        .faq-chevron {
+            transition: transform 0.3s;
+            opacity: 0.5;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.2s;
+            padding: 0 1.2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+            padding: 0 1.2rem 1rem;
         }
 
         footer {
@@ -405,58 +572,22 @@
             color: var(--text-muted);
             font-size: 0.875rem;
             opacity: 0.7;
+            padding-bottom: 2rem;
         }
 
-        /* Mobile Responsive */
+        /* ── Mobile ── */
         @media (max-width: 768px) {
-            .language-selector {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .swap-btn {
-                transform: rotate(90deg);
-                margin: 0.5rem 0;
-            }
-
-            .swap-btn:hover {
-                transform: rotate(270deg);
-            }
-
-            .text-areas {
-                grid-template-columns: 1fr;
-            }
-
-            .text-area-container {
-                border-right: none;
-                border-bottom: 1px solid var(--border-subtle);
-                min-height: 200px;
-            }
-
-            .controls {
-                flex-direction: column-reverse;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            /* Mobile Navigation Adjustments */
-            .top-nav {
-                position: relative;
-                top: auto;
-                right: auto;
-                width: 100%;
-                justify-content: center;
-                margin-top: 1rem;
-                margin-bottom: 0.5rem;
-                padding: 0 1rem;
-            }
-
-            .nav-link {
-                padding: 8px 14px;
-                font-size: 0.85rem;
-            }
+            .language-selector { flex-direction: column; gap: 1rem; }
+            .swap-btn { transform: rotate(90deg); margin: 0.5rem 0; }
+            .swap-btn:hover { transform: rotate(270deg); }
+            .text-areas { grid-template-columns: 1fr; }
+            .text-area-container { border-right: none; border-bottom: 1px solid var(--border-subtle); min-height: 200px; }
+            .controls { flex-direction: column-reverse; }
+            .btn { width: 100%; }
+            .features-strip { grid-template-columns: 1fr; }
+            .top-nav { position: relative; top: auto; right: auto; width: 100%; justify-content: center; margin: 1rem 0 0.5rem; padding: 0 1rem; }
+            .nav-link { padding: 8px 14px; font-size: 0.85rem; }
+            h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -470,80 +601,203 @@
 
     <div class="container">
         <header>
+            <!-- h1 contains the primary keyword + natural variation -->
             <h1>AI Language Translator</h1>
-            <p class="description">Powered by LLM for accurate multilingual translations</p>
+            <p class="description">Free LLM-powered translation — accurate, context-aware, instant</p>
+
+            <!-- Language pills: indexable keyword signals + visual language coverage -->
+            <div class="lang-pills" aria-label="Supported languages">
+                <span class="lang-pill">English</span>
+                <span class="lang-pill">বাংলা Bangla</span>
+                <span class="lang-pill">العربية Arabic</span>
+                <span class="lang-pill">हिन्दी Hindi</span>
+                <span class="lang-pill">Español Spanish</span>
+                <span class="lang-pill">Français French</span>
+                <span class="lang-pill">Deutsch German</span>
+                <span class="lang-pill">中文 Chinese</span>
+                <span class="lang-pill">日本語 Japanese</span>
+                <span class="lang-pill">한국어 Korean</span>
+                <span class="lang-pill">Русский Russian</span>
+                <span class="lang-pill">Türkçe Turkish</span>
+            </div>
         </header>
 
-        <div class="translator-container">
-            <div class="language-selector">
-                <div class="select-wrapper">
-                    <select id="sourceLanguage">
-                        <option value="bn">Bangla</option>
-                        <option value="en" selected>English</option>
-                        <option value="ar">Arabic</option>
-                        <option value="hi">Hindi</option>
-                    </select>
-                </div>
-
-                <button class="swap-btn" id="swapLanguages" title="Swap languages">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="17 1 21 5 17 9"></polyline>
-                        <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
-                        <polyline points="7 23 3 19 7 15"></polyline>
-                        <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
-                    </svg>
-                </button>
-
-                <div class="select-wrapper">
-                    <select id="targetLanguage">
-                        <option value="bn" selected>Bangla</option>
-                        <option value="en">English</option>
-                        <option value="ar">Arabic</option>
-                        <option value="hi">Hindi</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="text-areas">
-                <div class="text-area-container">
-                    <div class="label-row">
-                        <h3>Original Text</h3>
+        <!-- ── Main Translator Card ── -->
+        <main>
+            <div class="translator-container" role="main" aria-label="Language translation tool">
+                <div class="language-selector">
+                    <div class="select-wrapper">
+                        <select id="sourceLanguage" aria-label="Source language">
+                            <!-- Populated by JS -->
+                        </select>
                     </div>
-                    <textarea id="sourceText" placeholder="Enter text to translate..."></textarea>
-                </div>
 
-                <div class="text-area-container">
-                    <div class="label-row">
-                        <h3>Translation</h3>
-                        <button class="copy-btn" id="copyBtn" title="Copy to Clipboard">
-                            <span class="icon">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                                </svg>
-                            </span>
-                            <span class="text">Copy</span>
-                        </button>
+                    <button class="swap-btn" id="swapLanguages" title="Swap languages" aria-label="Swap source and target languages">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true">
+                            <polyline points="17 1 21 5 17 9"></polyline>
+                            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                            <polyline points="7 23 3 19 7 15"></polyline>
+                            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                        </svg>
+                    </button>
+
+                    <div class="select-wrapper">
+                        <select id="targetLanguage" aria-label="Target language">
+                            <!-- Populated by JS -->
+                        </select>
                     </div>
-                    <textarea id="targetText" placeholder="Translation will appear here..." readonly></textarea>
+                </div>
+
+                <div class="text-areas">
+                    <div class="text-area-container">
+                        <div class="label-row">
+                            <h3>Original Text</h3>
+                        </div>
+                        <textarea id="sourceText" placeholder="Enter text to translate..." aria-label="Text to translate"></textarea>
+                    </div>
+
+                    <div class="text-area-container">
+                        <div class="label-row">
+                            <h3>Translation</h3>
+                            <button class="copy-btn" id="copyBtn" title="Copy to clipboard" aria-label="Copy translation">
+                                <span class="icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                </span>
+                                <span class="text">Copy</span>
+                            </button>
+                        </div>
+                        <textarea id="targetText" placeholder="Translation will appear here..." readonly aria-label="Translation output" aria-live="polite"></textarea>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div>
+                        <button class="btn btn-secondary" id="clearText">Clear</button>
+                    </div>
+                    <div style="display: flex; gap: 10px; width: 100%; justify-content: flex-end;">
+                        <button class="btn btn-secondary" id="downloadPdf">Download PDF</button>
+                        <button class="btn btn-primary" id="translateBtn">Translate</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="controls">
-                <div>
-                    <button class="btn btn-secondary" id="clearText">Clear</button>
+            <!-- ── Feature cards — indexable content ── -->
+            <div class="features-strip" aria-label="Key features">
+                <div class="feature-card">
+                    <div class="fc-icon" aria-hidden="true">🧠</div>
+                    <div class="fc-title">LLM-Powered Accuracy</div>
+                    <div class="fc-desc">Context-aware AI understands idioms, tone, and sentence structure—not just words.</div>
                 </div>
-                <div style="display: flex; gap: 10px; width: 100%; justify-content: flex-end;">
-                    <button class="btn btn-secondary" id="downloadPdf">Download PDF</button>
-                    <button class="btn btn-primary" id="translateBtn">Translate</button>
+                <div class="feature-card">
+                    <div class="fc-icon" aria-hidden="true">⚡</div>
+                    <div class="fc-title">16 Languages Supported</div>
+                    <div class="fc-desc">Translate between English, Bangla, Arabic, Hindi, Spanish, French, German, Chinese, Japanese, and more.</div>
+                </div>
+                <div class="feature-card">
+                    <div class="fc-icon" aria-hidden="true">📄</div>
+                    <div class="fc-title">PDF Export</div>
+                    <div class="fc-desc">Download a clean, formatted PDF of your translation for sharing or archiving.</div>
                 </div>
             </div>
-        </div>
+
+            <!-- ── Popular language pair shortcuts ── -->
+            <div class="popular-pairs" aria-label="Popular translation pairs">
+                <h2>Popular Translation Pairs</h2>
+                <div class="pairs-grid">
+                    <button class="pair-btn" data-from="en" data-to="bn">English <span class="pair-arrow">→</span> Bangla</button>
+                    <button class="pair-btn" data-from="bn" data-to="en">Bangla <span class="pair-arrow">→</span> English</button>
+                    <button class="pair-btn" data-from="en" data-to="ar">English <span class="pair-arrow">→</span> Arabic</button>
+                    <button class="pair-btn" data-from="ar" data-to="en">Arabic <span class="pair-arrow">→</span> English</button>
+                    <button class="pair-btn" data-from="en" data-to="hi">English <span class="pair-arrow">→</span> Hindi</button>
+                    <button class="pair-btn" data-from="hi" data-to="en">Hindi <span class="pair-arrow">→</span> English</button>
+                    <button class="pair-btn" data-from="en" data-to="es">English <span class="pair-arrow">→</span> Spanish</button>
+                    <button class="pair-btn" data-from="en" data-to="fr">English <span class="pair-arrow">→</span> French</button>
+                    <button class="pair-btn" data-from="en" data-to="zh">English <span class="pair-arrow">→</span> Chinese</button>
+                    <button class="pair-btn" data-from="en" data-to="ja">English <span class="pair-arrow">→</span> Japanese</button>
+                    <button class="pair-btn" data-from="en" data-to="de">English <span class="pair-arrow">→</span> German</button>
+                    <button class="pair-btn" data-from="en" data-to="tr">English <span class="pair-arrow">→</span> Turkish</button>
+                </div>
+            </div>
+
+            <!-- ── FAQ — rich snippet source ── -->
+            <section class="faq-section" aria-label="Frequently asked questions">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        How accurate is this AI language translator?
+                        <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        This translator is powered by large language models (LLMs) that understand context, idioms, and nuance — making it significantly more accurate than rule-based systems or older statistical models. It handles complex sentence structure and cultural context naturally.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Which languages does this AI translator support?
+                        <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        The translator supports 16 languages: English, Bangla, Arabic, Hindi, Spanish, French, German, Chinese (Simplified), Japanese, Russian, Portuguese, Italian, Korean, Turkish, Vietnamese, and Western Punjabi.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Is this AI translator free to use?
+                        <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        Yes, completely free. No account, sign-up, or payment is required. Just open the page, type your text, and translate instantly.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        How do I translate English to Bangla?
+                        <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        Select <strong>English</strong> as the source language and <strong>Bangla</strong> as the target language. Type or paste your text into the left box, then click <em>Translate</em>. The AI will return a natural, accurate Bangla translation in seconds.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Can I download my translation as a PDF?
+                        <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        Yes. After translating, click the <strong>Download PDF</strong> button. A formatted PDF containing both the original text and the translation will be saved to your device.
+                    </div>
+                </div>
+            </section>
+        </main>
 
         <footer>
-            <p>Using LLM for high-quality translations that understand context</p>
+            <p>Using large language models for high-quality, context-aware translations across 16+ languages</p>
         </footer>
     </div>
 
@@ -553,18 +807,16 @@
         const { jsPDF } = window.jspdf;
 
         document.addEventListener('DOMContentLoaded', function () {
-            // Elements
             const sourceLanguage = document.getElementById('sourceLanguage');
             const targetLanguage = document.getElementById('targetLanguage');
-            const swapBtn = document.getElementById('swapLanguages');
-            const sourceText = document.getElementById('sourceText');
-            const targetText = document.getElementById('targetText');
-            const translateBtn = document.getElementById('translateBtn');
-            const clearBtn = document.getElementById('clearText');
-            const downloadPdfBtn = document.getElementById('downloadPdf');
-            const copyBtn = document.getElementById('copyBtn');
+            const swapBtn       = document.getElementById('swapLanguages');
+            const sourceText    = document.getElementById('sourceText');
+            const targetText    = document.getElementById('targetText');
+            const translateBtn  = document.getElementById('translateBtn');
+            const clearBtn      = document.getElementById('clearText');
+            const downloadPdfBtn= document.getElementById('downloadPdf');
+            const copyBtn       = document.getElementById('copyBtn');
 
-            // Popular languages list
             const languages = [
                 { code: 'bn', name: 'Bangla' },
                 { code: 'en', name: 'English' },
@@ -584,44 +836,29 @@
                 { code: 'vi', name: 'Vietnamese' }
             ];
 
-            // Populate language dropdowns
             function populateLanguages() {
-                const createOption = (lang) => {
-                    const option = document.createElement('option');
-                    option.value = lang.code;
-                    option.textContent = lang.name;
-                    return option;
-                };
-
-                // Clear existing options except defaults if any (we are replacing all)
                 sourceLanguage.innerHTML = '';
                 targetLanguage.innerHTML = '';
-
                 languages.forEach(lang => {
-                    sourceLanguage.appendChild(createOption(lang));
-                    targetLanguage.appendChild(createOption(lang));
+                    const optA = document.createElement('option');
+                    optA.value = lang.code; optA.textContent = lang.name;
+                    const optB = optA.cloneNode(true);
+                    sourceLanguage.appendChild(optA);
+                    targetLanguage.appendChild(optB);
                 });
-
-                // Set defaults
                 sourceLanguage.value = 'en';
                 targetLanguage.value = 'bn';
             }
 
             populateLanguages();
 
-            // Language names mapping for quick lookup
-            const languageNames = languages.reduce((acc, lang) => {
-                acc[lang.code] = lang.name;
-                return acc;
-            }, {});
+            const languageNames = languages.reduce((acc, l) => { acc[l.code] = l.name; return acc; }, {});
 
-            // Swap Logic
+            // Swap
             swapBtn.addEventListener('click', function () {
                 const temp = sourceLanguage.value;
                 sourceLanguage.value = targetLanguage.value;
                 targetLanguage.value = temp;
-
-                // Also swap text if there's content
                 if (sourceText.value || targetText.value) {
                     const tempText = sourceText.value;
                     sourceText.value = targetText.value;
@@ -629,60 +866,48 @@
                 }
             });
 
-            // Copy to Clipboard Logic
-            copyBtn.addEventListener('click', () => {
-                if (!targetText.value) return;
-
-                navigator.clipboard.writeText(targetText.value).then(() => {
-                    const originalHtml = copyBtn.innerHTML;
-
-                    // Change style to indicate success
-                    copyBtn.classList.add('success');
-                    copyBtn.innerHTML = `
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <span class="text">Copied!</span>
-                    `;
-
-                    // Revert after 2 seconds
-                    setTimeout(() => {
-                        copyBtn.classList.remove('success');
-                        copyBtn.innerHTML = originalHtml;
-                    }, 2000);
-                }).catch(err => {
-                    console.error('Failed to copy: ', err);
+            // Popular pair shortcuts
+            document.querySelectorAll('.pair-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    sourceLanguage.value = btn.dataset.from;
+                    targetLanguage.value = btn.dataset.to;
+                    sourceText.focus();
+                    // Smooth scroll up to translator
+                    document.querySelector('.translator-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
             });
 
-            // Clear Text
+            // Copy
+            copyBtn.addEventListener('click', () => {
+                if (!targetText.value) return;
+                navigator.clipboard.writeText(targetText.value).then(() => {
+                    const orig = copyBtn.innerHTML;
+                    copyBtn.classList.add('success');
+                    copyBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span class="text">Copied!</span>`;
+                    setTimeout(() => { copyBtn.classList.remove('success'); copyBtn.innerHTML = orig; }, 2000);
+                }).catch(console.error);
+            });
+
+            // Clear
             clearBtn.addEventListener('click', function () {
                 sourceText.value = '';
                 targetText.value = '';
                 sourceText.focus();
             });
 
-            // Translate Text
+            // Translate
             translateBtn.addEventListener('click', async function () {
                 const text = sourceText.value.trim();
-                if (!text) {
-                    alert('Please enter text to translate');
-                    return;
-                }
-
+                if (!text) { alert('Please enter text to translate'); return; }
                 const fromLang = sourceLanguage.value;
                 const toLang = targetLanguage.value;
-
-                if (fromLang === toLang) {
-                    alert('Source and target languages cannot be the same');
-                    return;
-                }
+                if (fromLang === toLang) { alert('Source and target languages cannot be the same'); return; }
 
                 translateBtn.disabled = true;
-                const originalBtnText = translateBtn.innerHTML;
                 translateBtn.innerHTML = 'Translating <span class="loading"></span>';
 
                 try {
-                    const translation = await translateText(text, fromLang, toLang);
-                    targetText.value = translation;
+                    targetText.value = await translateText(text, fromLang, toLang);
                 } catch (error) {
                     console.error('Translation error:', error);
                     alert('Translation failed. Please try again.');
@@ -694,120 +919,94 @@
 
             // Download PDF
             downloadPdfBtn.addEventListener('click', async function () {
-                if (!targetText.value.trim()) {
-                    alert('No translation to download');
-                    return;
-                }
+                if (!targetText.value.trim()) { alert('No translation to download'); return; }
 
                 const fromLang = languageNames[sourceLanguage.value];
-                const toLang = languageNames[targetLanguage.value];
+                const toLang   = languageNames[targetLanguage.value];
 
-                // Create a temporary container for PDF generation
-                // This ensures we can capture the text with correct styling/fonts
                 const container = document.createElement('div');
-                container.style.padding = '40px';
-                container.style.width = '600px';
-                container.style.color = '#000';
-                container.style.background = '#fff';
-                container.style.fontFamily = 'Arial, sans-serif';
-
-                // Add content to the container
+                Object.assign(container.style, {
+                    padding: '40px', width: '600px', color: '#000',
+                    background: '#fff', fontFamily: 'Arial, sans-serif',
+                    position: 'fixed', left: '-9999px', top: '0'
+                });
                 container.innerHTML = `
-                    <h1 style="font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #333; padding-bottom: 10px;">Translation</h1>
-                    
-                    <div style="margin-bottom: 30px;">
-                        <h3 style="color: #555; font-size: 16px;">From ${fromLang}:</h3>
-                        <p style="font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${sourceText.value}</p>
+                    <h1 style="font-size:24px;margin-bottom:20px;border-bottom:2px solid #333;padding-bottom:10px">Translation</h1>
+                    <div style="margin-bottom:30px">
+                        <h3 style="color:#555;font-size:16px">From ${fromLang}:</h3>
+                        <p style="font-size:14px;line-height:1.6;white-space:pre-wrap">${sourceText.value}</p>
                     </div>
-                    
                     <div>
-                        <h3 style="color: #555; font-size: 16px;">To ${toLang}:</h3>
-                        <p style="font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${targetText.value}</p>
+                        <h3 style="color:#555;font-size:16px">To ${toLang}:</h3>
+                        <p style="font-size:14px;line-height:1.6;white-space:pre-wrap">${targetText.value}</p>
                     </div>
-                    
-                    <div style="margin-top: 40px; font-size: 10px; color: #999; text-align: center;">
-                        Generated by AI Language Translator
-                    </div>
+                    <div style="margin-top:40px;font-size:10px;color:#999;text-align:center">Generated by AI Language Translator — translatedby-ai.netlify.app</div>
                 `;
-
-                // Position off-screen
-                container.style.position = 'fixed';
-                container.style.left = '-9999px';
-                container.style.top = '0';
                 document.body.appendChild(container);
 
                 try {
-                    translateBtn.disabled = true; // Disable buttons during generation
-                    downloadPdfBtn.textContent = "Generating PDF...";
+                    translateBtn.disabled = true;
+                    downloadPdfBtn.textContent = 'Generating PDF…';
 
-                    const canvas = await html2canvas(container, {
-                        scale: 2, // Higher quality
-                        useCORS: true,
-                        logging: false
-                    });
-
+                    const canvas = await html2canvas(container, { scale: 2, useCORS: true, logging: false });
                     const imgData = canvas.toDataURL('image/png');
-                    const doc = new jsPDF({
-                        orientation: 'p',
-                        unit: 'mm',
-                        format: 'a4'
-                    });
-
-                    const imgProps = doc.getImageProperties(imgData);
+                    const doc = new jsPDF({ orientation: 'p', unit: 'mm', format: 'a4' });
                     const pdfWidth = doc.internal.pageSize.getWidth();
-                    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+                    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
                     const pageHeight = doc.internal.pageSize.getHeight();
 
                     let heightLeft = pdfHeight;
                     let position = 0;
-
-                    // Add first page
                     doc.addImage(imgData, 'PNG', 0, position, pdfWidth, pdfHeight);
                     heightLeft -= pageHeight;
 
-                    // Add subsequent pages if needed
                     while (heightLeft > 0) {
-                        position = heightLeft - pdfHeight; // Negative position to shift image up
+                        position = heightLeft - pdfHeight;
                         doc.addPage();
                         doc.addImage(imgData, 'PNG', 0, position, pdfWidth, pdfHeight);
                         heightLeft -= pageHeight;
                     }
 
                     doc.save(`translation_${sourceLanguage.value}_to_${targetLanguage.value}.pdf`);
-
                 } catch (error) {
-                    console.error("PDF generation failed:", error);
-                    alert("Failed to generate PDF. Please try again.");
+                    console.error('PDF generation failed:', error);
+                    alert('Failed to generate PDF. Please try again.');
                 } finally {
                     document.body.removeChild(container);
                     translateBtn.disabled = false;
-                    downloadPdfBtn.textContent = "Download PDF";
+                    downloadPdfBtn.textContent = 'Download PDF';
                 }
             });
 
-            // Function to call the Netlify function for translation
+            // FAQ accordion
+            document.querySelectorAll('.faq-question').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = btn.closest('.faq-item');
+                    const isOpen = item.classList.contains('open');
+                    // Close all
+                    document.querySelectorAll('.faq-item').forEach(i => {
+                        i.classList.remove('open');
+                        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                    });
+                    if (!isOpen) {
+                        item.classList.add('open');
+                        btn.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+
+            // API call
             async function translateText(text, fromLang, toLang) {
                 const response = await fetch('/.netlify/functions/translate', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        text,
-                        fromLang,
-                        toLang
-                    })
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text, fromLang, toLang })
                 });
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 const data = await response.json();
                 return data.translation;
             }
         });
     </script>
 </body>
-
 </html>
