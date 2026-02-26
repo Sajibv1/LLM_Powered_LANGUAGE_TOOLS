@@ -4,243 +4,714 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Grammar Fixer</title>
-    <meta name="description"
-        content="Free online AI grammar checker and fixer. Correct your English grammar instantly with our advanced AI tool.">
-    <meta name="keywords"
-        content="grammar fixer, AI grammar checker, correct grammar, English grammar correction, online grammar tool, grammar correction">
-    <meta name="author" content="Sajib">
 
-    <!-- Open Graph / Facebook -->
+    <!-- ══════════════════════════════════════
+         SEO: Title, Description, Keywords
+    ══════════════════════════════════════ -->
+    <title>AI Grammar Fixer – Free Online Grammar Checker & Corrector | Fix English Grammar Instantly</title>
+    <meta name="description" content="Free AI-powered grammar fixer and checker. Instantly correct English grammar, spelling, punctuation, and sentence structure with our advanced LLM tool. No sign-up required.">
+    <meta name="keywords" content="AI grammar fixer, free grammar checker, grammar corrector online, English grammar correction, fix grammar online, grammar check free, AI grammar tool, sentence corrector, spelling checker, punctuation fixer, writing assistant, grammar improvement">
+    <meta name="author" content="Sajib">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://translatedby-ai.netlify.app/grammerfixer">
-    <meta property="og:title" content="AI Grammar Fixer">
-    <meta property="og:description"
-        content="Free online AI grammar checker and fixer. Correct your English grammar instantly with our advanced AI tool.">
+    <meta property="og:title" content="AI Grammar Fixer – Free Online Grammar Checker & Corrector">
+    <meta property="og:description" content="Fix grammar, spelling, and punctuation errors instantly with our free AI-powered grammar checker. No account needed.">
     <meta property="og:image" content="https://translatedby-ai.netlify.app/og-image.jpg">
 
-    <!-- Twitter -->
+    <!-- Twitter Card -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://translatedby-ai.netlify.app/grammerfixer">
-    <meta property="twitter:title" content="AI Grammar Fixer">
-    <meta property="twitter:description"
-        content="Free online AI grammar checker and fixer. Correct your English grammar instantly with our advanced AI tool.">
+    <meta property="twitter:title" content="AI Grammar Fixer – Free Grammar Checker & Corrector">
+    <meta property="twitter:description" content="Instantly fix English grammar, spelling, and punctuation with free AI. No sign-up needed.">
     <meta property="twitter:image" content="https://translatedby-ai.netlify.app/og-image.jpg">
+
     <link rel="canonical" href="https://translatedby-ai.netlify.app/grammerfixer">
+
+    <!-- ══════════════════════════════════════
+         SCHEMA: SoftwareApplication + FAQPage
+    ══════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "AI Grammar Fixer",
+      "url": "https://translatedby-ai.netlify.app/grammerfixer",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "description": "Free AI-powered grammar fixer that uses large language models to instantly correct English grammar, spelling, punctuation, and sentence structure.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Grammar correction",
+        "Spelling correction",
+        "Punctuation fixer",
+        "Sentence structure improvement",
+        "Copy corrected text to clipboard",
+        "No sign-up required",
+        "Powered by LLM"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the AI Grammar Fixer work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The AI Grammar Fixer uses a large language model (LLM) to analyze your text and correct grammar, spelling, punctuation, and sentence structure errors. It understands context, making corrections that sound natural rather than robotic."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this grammar checker free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the AI Grammar Fixer is completely free to use. No account, subscription, or payment is required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of errors does the AI Grammar Fixer correct?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It corrects a wide range of errors including subject-verb agreement, verb tenses, article usage (a/an/the), spelling mistakes, punctuation errors, run-on sentences, sentence fragments, and awkward phrasing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this grammar fixer for essays or professional writing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The AI Grammar Fixer works well for essays, emails, professional documents, social media posts, and everyday writing. It preserves your original meaning while improving clarity and correctness."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is AI grammar correction better than traditional grammar checkers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Traditional grammar checkers use fixed rules and often miss context-dependent errors or flag correct sentences as wrong. AI grammar correction uses language models that understand context, tone, and nuance — delivering more accurate and natural corrections."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --bg: #000000;
             --grid: rgba(255, 255, 255, 0.03);
-            --card-bg: rgba(255, 255, 255, 0.02);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.07);
             --text: #FFFFFF;
-            --muted: rgba(255, 255, 255, 0.85);
-            --input-bg: #040404;
+            --muted: #9ca3af;
+            --input-bg: rgba(255, 255, 255, 0.02);
             --border: rgba(255, 255, 255, 0.08);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-            --primary: #FFFFFF;
-            --primary-hover: #E6E6E6;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+            --primary-gradient: linear-gradient(135deg, #ffffff, #e6e6e6);
             --success-bg: rgba(34, 197, 94, 0.12);
             --error-bg: rgba(239, 68, 68, 0.12);
+            --radius: 16px;
         }
 
+        * { box-sizing: border-box; outline: none; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--bg);
-            /* grid overlay */
             background-image:
-                linear-gradient(var(--grid) 1px, transparent 1px),
                 linear-gradient(90deg, var(--grid) 1px, transparent 1px),
-                linear-gradient(#000, #000);
-            background-size: 28px 28px, 28px 28px, 100% 100%;
+                linear-gradient(0deg, var(--grid) 1px, transparent 1px),
+                radial-gradient(circle at 15% 10%, rgba(255,255,255,0.04) 0%, transparent 40%),
+                radial-gradient(circle at 85% 90%, rgba(255,255,255,0.02) 0%, transparent 40%);
+            background-size: 28px 28px, 28px 28px, cover, cover;
             color: var(--text);
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            padding: 20px;
+            padding: 80px 20px 40px;
         }
 
-        .container {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
+        /* ── Nav ── */
+        .top-nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 9px 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: var(--muted);
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.25s ease;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            color: #000;
+            background: var(--primary-gradient);
+            border-color: transparent;
+        }
+
+        /* ── Page wrapper ── */
+        .page-wrapper {
             width: 100%;
-            max-width: 600px;
-            border: 1px solid var(--border);
-            backdrop-filter: blur(4px);
+            max-width: 680px;
+        }
+
+        /* ── Header ── */
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
         }
 
         h1 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: var(--text);
-            font-size: 1.8rem;
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin: 0 0 0.4rem;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .description {
+            color: var(--muted);
+            font-size: 1rem;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        /* ── Capability pills ── */
+        .cap-pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 1rem;
+        }
+
+        .cap-pill {
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: var(--muted);
+        }
+
+        /* ── Main card ── */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            backdrop-filter: blur(12px);
         }
 
         label {
-            font-weight: 600;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             display: block;
-            margin-bottom: 0.5rem;
-            margin-top: 1rem;
-            color: var(--text);
+            margin-bottom: 0.6rem;
+            color: #fff;
         }
 
         textarea {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: 12px;
             font-size: 1rem;
             font-family: inherit;
             resize: vertical;
-            box-sizing: border-box;
-            transition: border-color 0.18s, background-color 0.18s;
+            transition: border-color 0.18s;
             background: var(--input-bg);
             color: var(--text);
             caret-color: var(--text);
+            line-height: 1.6;
         }
 
-        textarea::placeholder {
-            color: rgba(255, 255, 255, 0.55);
-        }
+        textarea::placeholder { color: rgba(255,255,255,0.25); }
+        textarea:focus { border-color: rgba(255,255,255,0.2); box-shadow: 0 0 0 3px rgba(255,255,255,0.03); }
 
-        textarea:focus {
-            outline: none;
-            border-color: var(--primary-hover);
-            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.04);
-        }
-
-        button {
-            background-color: transparent;
-            color: var(--text);
-            border: 1px solid var(--border);
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 1.5rem;
-            transition: background-color 0.12s, transform 0.06s, border-color 0.12s;
+        /* ── Buttons ── */
+        .btn {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
+            width: 100%;
+            padding: 13px 24px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            border: none;
         }
 
-        button:hover {
-            background-color: rgba(255, 255, 255, 0.03);
-            border-color: var(--primary-hover);
-            transform: translateY(-1px);
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: #000;
+            margin-top: 1.2rem;
+            box-shadow: 0 4px 20px rgba(255,255,255,0.07);
         }
 
-        button:active {
-            transform: translateY(0);
+        .btn-primary:hover:not(:disabled) {
+            box-shadow: 0 6px 28px rgba(255,255,255,0.12);
+            transform: translateY(-2px);
         }
 
-        button:disabled {
-            background-color: rgba(255, 255, 255, 0.01);
+        .btn-primary:active { transform: translateY(0); }
+
+        .btn-primary:disabled {
+            opacity: 0.6;
             cursor: not-allowed;
-            opacity: 0.7;
+            transform: none;
         }
 
-        /* Specific style for copy button */
-        #copyBtn {
+        .btn-copy {
+            background: rgba(255,255,255,0.04);
+            color: var(--muted);
+            border: 1px dashed rgba(255,255,255,0.1);
             margin-top: 10px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             padding: 10px;
-            border-style: dashed;
-            opacity: 0.8;
         }
 
-        #copyBtn:hover {
-            opacity: 1;
+        .btn-copy:hover:not(:disabled) {
+            background: rgba(255,255,255,0.07);
+            color: #fff;
             border-style: solid;
+            border-color: rgba(255,255,255,0.2);
         }
 
+        .btn-copy:disabled { opacity: 0.4; cursor: not-allowed; }
+
+        .btn-copy.copied { color: #4ade80; background: rgba(74,222,128,0.08); border-color: rgba(74,222,128,0.2); border-style: solid; }
+
+        /* ── Divider ── */
         .output-group {
-            margin-top: 2rem;
-            padding-top: 1rem;
+            margin-top: 1.8rem;
+            padding-top: 1.5rem;
             border-top: 1px solid var(--border);
         }
 
+        /* ── Status ── */
         .status {
             text-align: center;
             margin-top: 10px;
-            font-size: 0.9rem;
-            min-height: 20px;
+            font-size: 0.88rem;
+            min-height: 22px;
             color: var(--text);
+            border-radius: 8px;
+            transition: all 0.2s;
         }
 
-        .error {
-            background: var(--error-bg);
-            color: var(--text);
-            padding: 6px 10px;
-            border-radius: 6px;
-            display: inline-block;
+        .status.error   { background: var(--error-bg);   padding: 6px 12px; }
+        .status.success { background: var(--success-bg); padding: 6px 12px; }
+
+        /* ── Features strip ── */
+        .features-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
 
-        .success {
-            background: var(--success-bg);
-            color: var(--text);
-            padding: 6px 10px;
-            border-radius: 6px;
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 1.1rem 1.2rem;
+        }
+
+        .fc-icon  { font-size: 1.3rem; margin-bottom: 6px; }
+        .fc-title { font-size: 0.85rem; font-weight: 600; color: #fff; margin-bottom: 4px; }
+        .fc-desc  { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+        /* ── Use cases ── */
+        .use-cases {
+            margin-top: 1.5rem;
+        }
+
+        .use-cases h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--muted);
+            letter-spacing: 0.5px;
+            margin-bottom: 0.8rem;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 9px;
+        }
+
+        .case-tag {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 0.6rem 0.9rem;
+            font-size: 0.82rem;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .case-tag-icon { opacity: 0.7; }
+
+        /* ── FAQ ── */
+        .faq-section { margin-top: 2.5rem; }
+
+        .faq-section h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item {
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            margin-bottom: 9px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: var(--card-bg);
+            border: none;
+            color: #fff;
+            font-family: inherit;
+            font-size: 0.93rem;
+            font-weight: 500;
+            padding: 1rem 1.2rem;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover { background: rgba(255,255,255,0.04); }
+
+        .faq-chevron {
+            transition: transform 0.3s;
+            opacity: 0.45;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.2s;
+            padding: 0 1.2rem;
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 220px;
+            padding: 0 1.2rem 1rem;
+        }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--muted);
+            font-size: 0.85rem;
+            opacity: 0.65;
+            padding-bottom: 1rem;
+        }
+
+        /* ── Spinner ── */
+        .spinner {
             display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(0,0,0,0.25);
+            border-radius: 50%;
+            border-top-color: #000;
+            animation: spin 0.9s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ── Mobile ── */
+        @media (max-width: 640px) {
+            body { padding: 70px 16px 32px; }
+            h1 { font-size: 1.9rem; }
+            .features-strip { grid-template-columns: 1fr; }
+            .top-nav { top: 14px; right: 14px; gap: 8px; }
+            .nav-link { padding: 7px 12px; font-size: 0.8rem; }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <h1> AI Grammar Fixer</h1>
+    <!-- Navigation -->
+    <nav class="top-nav" aria-label="Site navigation">
+        <a href="index.html" class="nav-link">Translator</a>
+        <a href="grammerfixer.html" class="nav-link active">Grammar Fixer</a>
+        <a href="sremover.html" class="nav-link">Clean AI Texts</a>
+    </nav>
 
-        <label for="inputText">Enter your text:</label>
-        <textarea id="inputText" rows="5"
-            placeholder="Type or paste text here (e.g. 'I has went to store yesterday.')"></textarea>
+    <div class="page-wrapper">
 
-        <button id="fixBtn" onclick="fixGrammar()">Fix My Grammar</button>
+        <!-- ── Header ── -->
+        <header>
+            <h1>AI Grammar Fixer</h1>
+            <p class="description">Free LLM-powered grammar checker — fix errors, improve clarity, write better</p>
 
-        <p id="status" class="status"></p>
+            <div class="cap-pills" aria-label="What gets fixed">
+                <span class="cap-pill">Grammar Errors</span>
+                <span class="cap-pill">Spelling Mistakes</span>
+                <span class="cap-pill">Punctuation</span>
+                <span class="cap-pill">Sentence Structure</span>
+                <span class="cap-pill">Verb Tenses</span>
+                <span class="cap-pill">Article Usage</span>
+                <span class="cap-pill">Run-on Sentences</span>
+            </div>
+        </header>
 
-        <div class="output-group">
-            <label for="outputText">Corrected Version:</label>
-            <textarea id="outputText" rows="5" readonly placeholder="Result will appear here..."></textarea>
+        <main>
 
-            <button id="copyBtn" onclick="copyToClipboard()" disabled>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                </svg>
-                Copy to Clipboard
-            </button>
-        </div>
+            <!-- ── Main Tool Card ── -->
+            <div class="card" role="main" aria-label="Grammar correction tool">
+                <label for="inputText">Your Text</label>
+                <textarea
+                    id="inputText"
+                    rows="6"
+                    placeholder="Paste your text here — e.g. 'I has went to the store yesterday and buyed many things.'"
+                    aria-label="Text to grammar check"
+                ></textarea>
+
+                <button class="btn btn-primary" id="fixBtn" onclick="fixGrammar()" aria-label="Fix grammar">
+                    Fix My Grammar
+                </button>
+
+                <p id="status" class="status" role="status" aria-live="polite"></p>
+
+                <div class="output-group">
+                    <label for="outputText">Corrected Version</label>
+                    <textarea
+                        id="outputText"
+                        rows="6"
+                        readonly
+                        placeholder="Your corrected text will appear here…"
+                        aria-label="Corrected text output"
+                        aria-live="polite"
+                    ></textarea>
+
+                    <button class="btn btn-copy" id="copyBtn" onclick="copyToClipboard()" disabled aria-label="Copy corrected text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        Copy to Clipboard
+                    </button>
+                </div>
+            </div>
+
+            <!-- ── Feature cards ── -->
+            <div class="features-strip" aria-label="Key features">
+                <div class="feature-card">
+                    <div class="fc-icon" aria-hidden="true">🧠</div>
+                    <div class="fc-title">Context-Aware AI</div>
+                    <div class="fc-desc">Understands meaning, not just rules — fixes errors that traditional checkers miss.</div>
+                </div>
+                <div class="feature-card">
+                    <div class="fc-icon" aria-hidden="true">⚡</div>
+                    <div class="fc-title">Instant Results</div>
+                    <div class="fc-desc">Get a fully corrected version of your text in seconds, no waiting.</div>
+                </div>
+                <div class="feature-card">
+                    <div class="fc-icon" aria-hidden="true">🔒</div>
+                    <div class="fc-title">Free & Private</div>
+                    <div class="fc-desc">No account needed. Your text is used only for correction and never stored.</div>
+                </div>
+            </div>
+
+            <!-- ── Use cases ── -->
+            <div class="use-cases" aria-label="Use cases">
+                <h2>Works Great For</h2>
+                <div class="cases-grid">
+                    <div class="case-tag"><span class="case-tag-icon">📝</span> Essays & Reports</div>
+                    <div class="case-tag"><span class="case-tag-icon">📧</span> Emails & Cover Letters</div>
+                    <div class="case-tag"><span class="case-tag-icon">💼</span> Professional Writing</div>
+                    <div class="case-tag"><span class="case-tag-icon">🎓</span> Student Assignments</div>
+                    <div class="case-tag"><span class="case-tag-icon">📱</span> Social Media Posts</div>
+                    <div class="case-tag"><span class="case-tag-icon">🌐</span> Non-native English Writers</div>
+                    <div class="case-tag"><span class="case-tag-icon">📰</span> Blog Articles</div>
+                    <div class="case-tag"><span class="case-tag-icon">💬</span> Chat Messages</div>
+                </div>
+            </div>
+
+            <!-- ── FAQ ── -->
+            <section class="faq-section" aria-label="Frequently asked questions">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        How does the AI Grammar Fixer work?
+                        <svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        It uses a large language model (LLM) to analyze your text in full context and correct grammar, spelling, punctuation, and sentence structure. Unlike rule-based tools, it understands meaning — so corrections sound natural, not robotic.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Is this grammar checker completely free?
+                        <svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        Yes, completely free. No account, subscription, or payment is required — open the page and start fixing your grammar instantly.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        What types of grammar errors does it fix?
+                        <svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        It fixes subject-verb agreement, verb tenses, article usage (a/an/the), spelling, punctuation, run-on sentences, sentence fragments, word order, and awkward phrasing — covering virtually all common English grammar mistakes.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Can I use this for essays and professional writing?
+                        <svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        Absolutely. It works well for essays, emails, cover letters, reports, and business documents. The AI preserves your original meaning and voice while improving grammatical correctness and clarity.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        How is this better than Grammarly or traditional checkers?
+                        <svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        Traditional checkers apply fixed grammatical rules and often flag correct sentences as wrong or miss context-dependent errors. This tool uses an LLM that reads the full sentence for meaning, making corrections that are both accurate and natural-sounding. And it's free with no paywall.
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <p>Using large language models for accurate, context-aware English grammar correction</p>
+        </footer>
+
     </div>
 
     <script>
+        // ── FAQ accordion ──
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('open');
+                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                if (!isOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // ── Grammar fix ──
         async function fixGrammar() {
-            const input = document.getElementById('inputText').value;
+            const input     = document.getElementById('inputText').value;
             const outputBox = document.getElementById('outputText');
             const statusBox = document.getElementById('status');
-            const btn = document.getElementById('fixBtn');
-            const copyBtn = document.getElementById('copyBtn');
+            const btn       = document.getElementById('fixBtn');
+            const copyBtn   = document.getElementById('copyBtn');
 
-            // Validation
             if (!input.trim()) {
-                statusBox.textContent = "Please enter some text first.";
-                statusBox.className = "status error";
+                statusBox.textContent = 'Please enter some text first.';
+                statusBox.className = 'status error';
                 return;
             }
 
-            // Reset UI State
             btn.disabled = true;
-            btn.textContent = "Fixing...";
-            outputBox.value = "";
-            copyBtn.disabled = true; // Disable copy while loading
-            statusBox.textContent = "";
+            btn.innerHTML = '<span class="spinner"></span> Fixing…';
+            outputBox.value = '';
+            copyBtn.disabled = true;
+            statusBox.textContent = '';
+            statusBox.className = 'status';
 
             try {
                 const response = await fetch('/.netlify/functions/grammar', {
@@ -250,55 +721,45 @@
                 });
 
                 const data = await response.json();
+                if (!response.ok) throw new Error(data.error || 'Something went wrong');
 
-                if (!response.ok) {
-                    throw new Error(data.error || 'Something went wrong');
-                }
-
-                // Success
                 outputBox.value = data.corrected;
-                statusBox.textContent = "Text corrected successfully!";
-                statusBox.className = "status success";
-                copyBtn.disabled = false; // Enable copy button
+                statusBox.textContent = '✓ Text corrected successfully!';
+                statusBox.className = 'status success';
+                copyBtn.disabled = false;
 
             } catch (error) {
                 console.error(error);
-                statusBox.textContent = "Error: " + error.message;
-                statusBox.className = "status error";
+                statusBox.textContent = 'Error: ' + error.message;
+                statusBox.className = 'status error';
             } finally {
-                // Restore Button
                 btn.disabled = false;
-                btn.textContent = "Fix My Grammar";
+                btn.textContent = 'Fix My Grammar';
             }
         }
 
-        // NEW: Copy Functionality
+        // ── Copy ──
         async function copyToClipboard() {
             const outputText = document.getElementById('outputText');
-            const copyBtn = document.getElementById('copyBtn');
-            const originalText = copyBtn.innerHTML;
-
+            const copyBtn    = document.getElementById('copyBtn');
+            const originalHTML = copyBtn.innerHTML;
             if (!outputText.value) return;
 
             try {
                 await navigator.clipboard.writeText(outputText.value);
-
-                // Visual Feedback
-                copyBtn.textContent = "Copied!";
-                copyBtn.style.borderColor = "var(--success-bg)";
-
-                // Reset after 2 seconds
-                setTimeout(() => {
-                    copyBtn.innerHTML = originalText;
-                    copyBtn.style.borderColor = "var(--border)";
-                }, 2000);
-
+                copyBtn.classList.add('copied');
+                copyBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!`;
+                setTimeout(() => { copyBtn.classList.remove('copied'); copyBtn.innerHTML = originalHTML; }, 2000);
             } catch (err) {
-                console.error('Failed to copy text: ', err);
-                copyBtn.textContent = "Failed to copy";
+                copyBtn.textContent = 'Failed to copy';
             }
         }
-    </script>
-</body>
 
+        // ── Enter key shortcut ──
+        document.getElementById('inputText').addEventListener('keydown', e => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') fixGrammar();
+        });
+    </script>
+
+</body>
 </html>
