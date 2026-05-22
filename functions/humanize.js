@@ -1,40 +1,38 @@
-const SYSTEM_PROMPT = `You are an elite human editor and ghostwriter. Your sole purpose is to take AI-generated text and rewrite it so it is indistinguishable from high-quality human writing. You must eliminate all "AI hallmarks" while preserving 100% of the original facts, data, and core arguments.
+const SYSTEM_PROMPT = `You are a raw, highly opinionated human writer. Your goal is to rewrite the user's text so it completely destroys the mathematical markers looked for by advanced AI detectors like GPTZero. 
 
-Follow these execution guidelines precisely:
-1. Emulate High Sentence Variance: Mix ultra-short sentences (3-5 words) with medium sentences and occasional long, flowing sentences. Never allow three sentences of similar length to follow one another.
-2. Emulate Natural Vocabulary: Use diverse, everyday idioms and conversational language. Avoid predictable word choices. Use natural contractions (don't, it's, we'll). Shift to active voice.
-3. Strictly Forbidden Words: Do not use words like: delve, tapestry, testament, beacon, hurdle, paramount, pivotal, multifaceted, dynamic, look no further, in conclusion, furthermore, moreover, visually stunning, reshape the landscape.
-4. Structural Realism: Break up long blocks of text. Use varied paragraph lengths. Do not use highly formal transition elements at the beginning of paragraphs; allow paragraphs to bridge naturally.
-5. Output Rule: Output ONLY the humanized text. Do not add conversational intro text like "Sure, here is your text."`;
+You must systematically eliminate the following 10 AI telemetry markers:
+
+1. Robotic Formality & Overly Formal: Drop all polished, institutional, or academic styling. Write with a loose, spontaneous, and conversational cadence. 
+2. Impersonal Tone: Inject human subjectivity and bias. Use first-person perspective ("I think," "in my world," "from what I've seen") and talk directly to the reader ("you"). Never remain a neutral, detached observer.
+3. Mechanical Precision & Sophisticated Clarity: Stop choosing the most "precise" or sophisticated academic words. Use casual, everyday speech. Instead of "optimizing processes," write "making things run better." Instead of "utilizing," write "using."
+4. Lacks Creative Grammar & Mechanical Writing: Intentionally break rigid structural rules. Use sentence fragments for emphasis (e.g., "Not a chance." or "Which brings up another point."). Start sentences with "But," "And," or "Because." Use em-dashes (—) to break up thoughts mid-sentence.
+5. Speculative Focus: Eliminate all predictive AI filler language about potential future outcomes or safe implications (e.g., "This could lead to...", "It is vital to consider how this shapes..."). Keep assertions grounded firmly in the present tense or concrete, real-world examples.
+6. Rigid Guidance: Do not provide textbook-style, structured advice. Absolutely NO numbered lists, bullet points, or "Step 1, Step 2" breakdowns unless explicitly forced by raw data. Let thoughts connect organically, drifting from one point to the next like a real conversation.
+7. Lacks Creativity: Infuse the text with casual metaphors, rhetorical questions, and slight internal tangents. Avoid a perfectly linear, predictable progression of ideas.
+
+CRITICAL CONTROLS:
+- Use aggressive contractions throughout (don't, can't, it's, what's, there's, you'll).
+- STRICLY BANNED WORDS: delve, tapestry, testament, beacon, hurdle, paramount, pivotal, multifaceted, dynamic, landscape, look no further, furthermore, moreover, additionally, in conclusion, remember that, it is important to note.
+- Output ONLY the final rewritten text. Do not provide introductory or concluding conversational filler.`;
 
 export const handler = async (event) => {
-  // Only accept POST requests
   if (event.httpMethod !== "POST") {
-    return {
-      statusCode: 405,
-      body: JSON.stringify({ error: "Method Not Allowed" }),
-    };
+    return { statusCode: 405, body: JSON.stringify({ error: "Method Not Allowed" }) };
   }
 
   try {
     const { text } = JSON.parse(event.body);
 
     if (!text || text.trim() === "") {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ error: "Input text cannot be empty." }),
-      };
+      return { statusCode: 400, body: JSON.stringify({ error: "Input text cannot be empty." }) };
     }
 
     const apiKey = process.env.GROQ_API_KEY;
     if (!apiKey) {
-      return {
-        statusCode: 500,
-        body: JSON.stringify({ error: "Groq API key missing in environment configuration." }),
-      };
+      return { statusCode: 500, body: JSON.stringify({ error: "Groq API key missing." }) };
     }
 
-    // Call the Groq OpenAI-compatible API endpoint
+    // Call Groq API
     const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -47,7 +45,9 @@ export const handler = async (event) => {
           { role: "system", content: SYSTEM_PROMPT },
           { role: "user", content: text },
         ],
-        temperature: 0.9, // Higher variance forces more human-like unpredictability
+        // CRITICAL: Temperature bumped to 1.15 to force high unpredictability (Perplexity)
+        temperature: 1.15, 
+        presence_penalty: 0.6, // Discourages repeating words and generic AI structures
       }),
     });
 
@@ -69,9 +69,6 @@ export const handler = async (event) => {
     };
 
   } catch (error) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: error.message }),
-    };
+    return { statusCode: 500, body: JSON.stringify({ error: error.message }) };
   }
 };
