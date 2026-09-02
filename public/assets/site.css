@@ -42,27 +42,8 @@
     color-scheme: light;
 }
 
-/* Dark palette: follows the system unless the visitor has toggled explicitly */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-        --paper: #191D1B;
-        --card: #212623;
-        --ink: #E9EAE3;
-        --ink-soft: #A9AFA8;
-        --ink-faint: #7A817A;
-        --rule: #3B423D;
-        --status-err: #F08A6E;
-
-        --ink-translate: #8FA9F2;
-        --ink-grammar: #EC8062;
-        --ink-humanize: #6FBF90;
-        --ink-clean: #B4BAB3;
-        --ink-tutor: #E0A94B;
-
-        color-scheme: dark;
-    }
-}
-
+/* Dark palette: applied only when the visitor toggles it on.
+   Light is the default; the system preference is not followed. */
 :root[data-theme="dark"] {
     --paper: #191D1B;
     --card: #212623;
@@ -210,11 +191,6 @@ a { color: inherit; }
 
 :root[data-theme="dark"] .theme-btn .icon-moon { display: none; }
 :root[data-theme="dark"] .theme-btn .icon-sun { display: block; }
-
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .theme-btn .icon-moon { display: none; }
-    :root:not([data-theme="light"]) .theme-btn .icon-sun { display: block; }
-}
 
 /* ── Page scaffolding ──────────────────────────────────── */
 
