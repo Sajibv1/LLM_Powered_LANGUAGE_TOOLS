@@ -4,274 +4,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Symbol Remover</title>
-    <meta name="description"
-        content="Free online symbol remover tool. Remove unwanted symbols like asterisks (*) and hashtags (#) from your text instantly.">
-    <meta name="keywords"
-        content="symbol remover, remove asterisks, remove hashtags, clean text, text cleaner tool, remove special characters">
-    <meta name="author" content="Sajib">
 
-    <!-- Open Graph / Facebook -->
+    <title>Symbol Remover – Free Tool to Strip Asterisks & Hashtags from Text</title>
+    <meta name="description" content="Free online symbol remover tool. Remove unwanted symbols like asterisks (*) and hashtags (#) from your text instantly.">
+    <meta name="keywords" content="symbol remover, remove asterisks, remove hashtags, clean text, text cleaner tool, remove special characters">
+    <meta name="author" content="Sajib">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#555B56">
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://translatedby-ai.netlify.app/sremover">
     <meta property="og:title" content="Symbol Remover">
-    <meta property="og:description"
-        content="Free online symbol remover tool. Remove unwanted symbols like asterisks (*) and hashtags (#) from your text instantly.">
+    <meta property="og:description" content="Free online symbol remover tool. Remove unwanted symbols like asterisks (*) and hashtags (#) from your text instantly.">
     <meta property="og:image" content="https://translatedby-ai.netlify.app/og-image.jpg">
-
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://translatedby-ai.netlify.app/sremover">
     <meta property="twitter:title" content="Symbol Remover">
-    <meta property="twitter:description"
-        content="Free online symbol remover tool. Remove unwanted symbols like asterisks (*) and hashtags (#) from your text instantly.">
-    <meta property="twitter:image" content="https://translatedby-ai.netlify.app/og-image.jpg">
+    <meta property="twitter:description" content="Free online symbol remover tool. Remove unwanted symbols like asterisks (*) and hashtags (#) from your text instantly.">
     <link rel="canonical" href="https://translatedby-ai.netlify.app/sremover">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23555B56'/%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css">
+
     <style>
-        /* --- EXACT THEME FROM PREVIOUS REQUEST --- */
-        :root {
-            --bg: #000000;
-            --grid: rgba(255, 255, 255, 0.03);
-            --card-bg: rgba(255, 255, 255, 0.02);
-            --text: #FFFFFF;
-            --muted: rgba(255, 255, 255, 0.85);
-            --input-bg: #040404;
-            --border: rgba(255, 255, 255, 0.08);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-            --primary: #FFFFFF;
-            --primary-hover: #E6E6E6;
-            --success-bg: rgba(34, 197, 94, 0.12);
-            --error-bg: rgba(239, 68, 68, 0.12);
+        :root { --tool: #555B56; }
+
+        .clean-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg);
-            /* grid overlay */
-            background-image:
-                linear-gradient(var(--grid) 1px, transparent 1px),
-                linear-gradient(90deg, var(--grid) 1px, transparent 1px),
-                linear-gradient(#000, #000);
-            background-size: 28px 28px, 28px 28px, 100% 100%;
-            color: var(--text);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            width: 100%;
-            max-width: 600px;
-            border: 1px solid var(--border);
-            backdrop-filter: blur(4px);
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: var(--text);
-            font-size: 1.8rem;
-        }
-
-        label {
-            font-weight: 600;
-            display: block;
-            margin-bottom: 0.5rem;
-            margin-top: 1rem;
-            color: var(--text);
-        }
-
-        textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            resize: vertical;
-            box-sizing: border-box;
-            transition: border-color 0.18s, background-color 0.18s;
-            background: var(--input-bg);
-            color: var(--text);
-            caret-color: var(--text);
-        }
-
-        textarea::placeholder {
-            color: rgba(255, 255, 255, 0.55);
-        }
-
-        textarea:focus {
-            outline: none;
-            border-color: var(--primary-hover);
-            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.04);
-        }
-
-        button {
-            background-color: transparent;
-            color: var(--text);
-            border: 1px solid var(--border);
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 1.5rem;
-            transition: background-color 0.12s, transform 0.06s, border-color 0.12s;
+        .tool-actions {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 8px;
+            justify-content: space-between;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 18px;
         }
 
-        button:hover {
-            background-color: rgba(255, 255, 255, 0.03);
-            border-color: var(--primary-hover);
-            transform: translateY(-1px);
-        }
-
-        button:active {
-            transform: translateY(0);
-        }
-
-        button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        /* Specific style for copy button */
-        #copyBtn {
-            margin-top: 10px;
-            font-size: 0.9rem;
-            padding: 10px;
-            border-style: dashed;
-            opacity: 0.8;
-        }
-
-        #copyBtn:hover {
-            opacity: 1;
-            border-style: solid;
-        }
-
-        .output-group {
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .status {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 0.9rem;
-            min-height: 20px;
-            color: var(--text);
-        }
-
-        .error {
-            background: var(--error-bg);
-            color: var(--text);
-            padding: 6px 10px;
-            border-radius: 6px;
-            display: inline-block;
-        }
-
-        .success {
-            background: var(--success-bg);
-            color: var(--text);
-            padding: 6px 10px;
-            border-radius: 6px;
-            display: inline-block;
+        @media (max-width: 720px) {
+            .clean-grid { grid-template-columns: 1fr; }
+            .tool-actions .btn { width: 100%; }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>Symbol Remover</h1>
-
-        <label for="inputText">Input Text:</label>
-        <textarea id="inputText" rows="5" placeholder="Paste text here (e.g. 'This is *bold* and #hashtag')"></textarea>
-
-        <button id="cleanBtn" onclick="removeSymbols()">Remove * and #</button>
-
-        <p id="status" class="status"></p>
-
-        <div class="output-group">
-            <label for="outputText">Cleaned Text:</label>
-            <textarea id="outputText" rows="5" readonly placeholder="Clean text will appear here..."></textarea>
-
-            <button id="copyBtn" onclick="copyToClipboard()" disabled>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                </svg>
-                Copy to Clipboard
-            </button>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="brand" href="/">
+                <span class="brand-mark" aria-hidden="true"></span>
+                Language Tools
+            </a>
+            <nav class="toolstrip" aria-label="Tools">
+                <a href="/translate">Translate</a>
+                <a href="/grammerfixer">Fix grammar</a>
+                <a href="/humanize">Humanize</a>
+                <a href="/sremover" class="is-here">Clean symbols</a>
+                <a href="/chat">Practice English</a>
+            </nav>
         </div>
-    </div>
+    </header>
+
+    <main class="page">
+
+        <div class="masthead">
+            <h1>Clean symbols</h1>
+            <p class="lede">
+                Strip asterisks and hashtags out of pasted text. Runs entirely in your browser —
+                nothing is sent anywhere.
+            </p>
+        </div>
+
+        <section class="instrument" role="main" aria-label="Symbol remover tool">
+            <div class="instrument-head">The symbol cleaner</div>
+            <div class="instrument-body">
+                <div class="clean-grid">
+                    <div>
+                        <label class="field-label" for="inputText">Input text</label>
+                        <textarea id="inputText" class="field" rows="8"
+                            placeholder="Paste text here — e.g. “This is *bold* and #hashtag”"
+                            aria-label="Text to clean"></textarea>
+                    </div>
+                    <div>
+                        <label class="field-label" for="outputText">Cleaned text</label>
+                        <textarea id="outputText" class="field" rows="8" readonly
+                            placeholder="Clean text will appear here…"
+                            aria-label="Cleaned text output"></textarea>
+                    </div>
+                </div>
+
+                <div class="tool-actions">
+                    <p id="status" class="status" role="status" aria-live="polite"></p>
+                    <button class="btn btn-primary" id="cleanBtn">Remove * and #</button>
+                </div>
+            </div>
+            <div class="instrument-foot">
+                <span style="font-size: 0.85rem; color: var(--ink-soft);">Only asterisks (*) and hash signs (#) are removed — nothing else.</span>
+                <button class="btn btn-ghost btn-sm" id="copyBtn" disabled>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span id="copyLabel">Copy cleaned text</span>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="foot">
+        <div class="foot-inner">
+            <span>A small browser-side tool — your text never leaves the page.</span>
+            <span>© 2026 Sajib</span>
+        </div>
+    </footer>
 
     <script>
-        function removeSymbols() {
-            const input = document.getElementById('inputText').value;
-            const outputBox = document.getElementById('outputText');
-            const statusBox = document.getElementById('status');
-            const copyBtn = document.getElementById('copyBtn');
-
-            // Validation
-            if (!input) {
-                statusBox.textContent = "Please enter some text first.";
-                statusBox.className = "status error";
-                outputBox.value = "";
-                copyBtn.disabled = true;
-                return;
-            }
-
-            // The Regex Logic: Replace * and # with empty string globally
-            const cleanedText = input.replace(/[*#]/g, '');
-
-            outputBox.value = cleanedText;
-
-            // UI Feedback
-            statusBox.textContent = "Symbols removed!";
-            statusBox.className = "status success";
-            copyBtn.disabled = false;
-        }
-
-        async function copyToClipboard() {
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputText = document.getElementById('inputText');
             const outputText = document.getElementById('outputText');
+            const cleanBtn = document.getElementById('cleanBtn');
             const copyBtn = document.getElementById('copyBtn');
-            const originalText = copyBtn.innerHTML;
+            const copyLabel = document.getElementById('copyLabel');
+            const status = document.getElementById('status');
 
-            if (!outputText.value) return;
+            cleanBtn.addEventListener('click', () => {
+                const input = inputText.value;
 
-            try {
-                await navigator.clipboard.writeText(outputText.value);
+                if (!input) {
+                    status.textContent = 'Please enter some text first.';
+                    status.className = 'status err';
+                    outputText.value = '';
+                    copyBtn.disabled = true;
+                    return;
+                }
 
-                // Visual Feedback
-                copyBtn.textContent = "Copied!";
-                copyBtn.style.borderColor = "var(--success-bg)";
+                outputText.value = input.replace(/[*#]/g, '');
+                status.textContent = 'Symbols removed.';
+                status.className = 'status ok';
+                copyBtn.disabled = false;
+            });
 
-                // Reset after 2 seconds
-                setTimeout(() => {
-                    copyBtn.innerHTML = originalText;
-                    copyBtn.style.borderColor = "var(--border)";
-                }, 2000);
-
-            } catch (err) {
-                console.error('Failed to copy text: ', err);
-                copyBtn.textContent = "Failed to copy";
-            }
-        }
+            copyBtn.addEventListener('click', async () => {
+                if (!outputText.value) return;
+                try {
+                    await navigator.clipboard.writeText(outputText.value);
+                    copyLabel.textContent = 'Copied';
+                    setTimeout(() => { copyLabel.textContent = 'Copy cleaned text'; }, 2000);
+                } catch (err) {
+                    console.error('Failed to copy text: ', err);
+                }
+            });
+        });
     </script>
 </body>
-
 </html>

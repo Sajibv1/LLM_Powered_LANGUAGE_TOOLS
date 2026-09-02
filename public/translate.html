@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="google-site-verification" content="a1sG3keunZPWV6rhBixmpvQE8-5QFB2cuCeWWYy7MCM" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Language Translator – Free Online LLM Translation | English, Bangla, Arabic, Hindi & More</title>
+    <meta name="description" content="Free AI-powered language translator using advanced LLMs. Instantly translate text between English, Bangla, Arabic, Hindi, Spanish, French, Chinese, Japanese and 15+ languages with high accuracy. No sign-up needed.">
+    <meta name="keywords" content="AI translator, free online translator, LLM translation, language translator, English to Bangla translator, Bangla to English, Arabic translator, Hindi translator, Spanish translator, French translator, translate text online, AI language translation, machine translation, multilingual translator">
+    <meta name="author" content="Sajib">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2149C6">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://translatedby-ai.netlify.app/translate">
+    <meta property="og:title" content="AI Language Translator – Free LLM-Powered Translation">
+    <meta property="og:description" content="Translate between 15+ languages instantly using advanced AI. Free, accurate, and context-aware.">
+    <meta property="og:image" content="https://translatedby-ai.netlify.app/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://translatedby-ai.netlify.app/translate">
+    <meta property="twitter:title" content="AI Language Translator – Free LLM Translation">
+    <meta property="twitter:description" content="Free AI translator supporting English, Bangla, Arabic, Hindi, Spanish, French, Chinese & more.">
+    <meta property="twitter:image" content="https://translatedby-ai.netlify.app/og-image.jpg">
+
+    <link rel="canonical" href="https://translatedby-ai.netlify.app/translate">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%232149C6'/%3E%3C/svg%3E">
+
+    <!-- SCHEMA: SoftwareApplication + FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "AI Language Translator",
+      "url": "https://translatedby-ai.netlify.app/translate",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "description": "Free AI-powered language translator that uses large language models (LLMs) to deliver accurate, context-aware translations between 15+ languages including English, Bangla, Arabic, Hindi, Spanish, French, German, Chinese, Japanese, and more.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "English to Bangla translation",
+        "Bangla to English translation",
+        "Arabic translation",
+        "Hindi translation",
+        "Spanish translation",
+        "French translation",
+        "Chinese translation",
+        "Japanese translation",
+        "PDF download of translations",
+        "Copy to clipboard"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How accurate is this AI language translator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This translator is powered by large language models (LLMs) that understand context, idioms, and nuance — making it significantly more accurate than rule-based systems. It handles sentence structure and cultural context naturally."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which languages does this AI translator support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The translator supports 16 languages: English, Bangla, Arabic, Hindi, Spanish, French, German, Chinese (Simplified), Japanese, Russian, Portuguese, Italian, Korean, Turkish, Vietnamese, and Western Punjabi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this AI translator free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the AI Language Translator is completely free. No account, sign-up, or payment is required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I translate from English to Bangla for free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Simply select English as the source language and Bangla as the target language, type or paste your text, and click Translate. The AI delivers an accurate, natural-sounding Bangla translation instantly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I download the translation as a PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. After translating, click the 'Download PDF' button to save a formatted PDF containing both the original text and the translation."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css">
+
+    <style>
+        :root { --tool: #2149C6; }
+
+        .lang-selector {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 18px 22px;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .select-wrap { position: relative; flex: 1; min-width: 120px; }
+
+        .select-wrap::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            width: 8px;
+            height: 8px;
+            pointer-events: none;
+            transform: translateY(-70%) rotate(45deg);
+            border-right: 2px solid var(--ink-soft);
+            border-bottom: 2px solid var(--ink-soft);
+        }
+
+        select {
+            width: 100%;
+            appearance: none;
+            font-family: var(--font-body);
+            font-size: 0.98rem;
+            font-weight: 500;
+            color: var(--ink);
+            background: var(--paper);
+            border: 1px solid var(--rule);
+            border-radius: 8px;
+            padding: 11px 36px 11px 14px;
+            cursor: pointer;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: var(--tool);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--tool) 15%, transparent);
+        }
+
+        .swap-btn {
+            flex-shrink: 0;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(30, 35, 32, 0.35);
+            background: transparent;
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.15s;
+        }
+
+        .swap-btn:hover { background: var(--paper); }
+        .swap-btn:focus-visible { outline-color: var(--tool); }
+
+        .text-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .text-cell {
+            padding: 20px 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .text-cell + .text-cell {
+            border-left: 1px solid var(--rule);
+            background: color-mix(in srgb, var(--tool) 3%, var(--card));
+        }
+
+        .text-cell .cell-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .copy-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--ink-soft);
+            background: transparent;
+            border: 1px solid var(--rule);
+            border-radius: 7px;
+            padding: 5px 12px;
+            cursor: pointer;
+        }
+
+        .copy-btn:hover { color: var(--ink); border-color: var(--ink-faint); }
+        .copy-btn.copied { color: var(--tool); border-color: var(--tool); }
+
+        textarea.field { min-height: 240px; resize: none; }
+
+        /* Feature notes */
+        .notes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--rule);
+            border: 1px solid var(--rule);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-top: 28px;
+        }
+
+        .note { background: var(--card); padding: 18px 20px; }
+
+        .note h3 { font-size: 0.95rem; margin: 0 0 6px; }
+
+        .note p { font-size: 0.85rem; color: var(--ink-soft); margin: 0; line-height: 1.55; }
+
+        /* Popular pairs */
+        .pairs {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+            gap: 10px;
+        }
+
+        .pair-btn {
+            font-family: var(--font-body);
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--ink);
+            text-align: left;
+            background: var(--card);
+            border: 1px solid var(--rule);
+            border-radius: 8px;
+            padding: 10px 14px;
+            cursor: pointer;
+            transition: border-color 0.15s, background-color 0.15s;
+        }
+
+        .pair-btn:hover { border-color: var(--tool); background: color-mix(in srgb, var(--tool) 4%, var(--card)); }
+
+        @media (max-width: 720px) {
+            .lang-selector { flex-direction: column; align-items: stretch; }
+            .swap-btn { align-self: center; transform: rotate(90deg); }
+            .text-grid { grid-template-columns: 1fr; }
+            .text-cell + .text-cell { border-left: none; border-top: 1px solid var(--rule); }
+            textarea.field { min-height: 160px; }
+            .notes { grid-template-columns: 1fr; }
+            .instrument-foot { flex-direction: column-reverse; }
+            .instrument-foot .btn { width: 100%; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="brand" href="/">
+                <span class="brand-mark" aria-hidden="true"></span>
+                Language Tools
+            </a>
+            <nav class="toolstrip" aria-label="Tools">
+                <a href="/translate" class="is-here">Translate</a>
+                <a href="/grammerfixer">Fix grammar</a>
+                <a href="/humanize">Humanize</a>
+                <a href="/sremover">Clean symbols</a>
+                <a href="/chat">Practice English</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page">
+
+        <div class="masthead">
+            <h1>Translate</h1>
+            <p class="lede">
+                Free, AI-powered translation between 16 languages — accurate, context-aware, instant.
+                No sign-up needed.
+            </p>
+            <ul class="chips" aria-label="Supported languages">
+                <li>English</li>
+                <li>বাংলা Bangla</li>
+                <li>العربية Arabic</li>
+                <li>हिन्दी Hindi</li>
+                <li>Español Spanish</li>
+                <li>Français French</li>
+                <li>Deutsch German</li>
+                <li>中文 Chinese</li>
+                <li>日本語 Japanese</li>
+                <li>한국어 Korean</li>
+                <li>Русский Russian</li>
+                <li>Türkçe Turkish</li>
+            </ul>
+        </div>
+
+        <section class="instrument" role="main" aria-label="Language translation tool">
+            <div class="instrument-head">The translator</div>
+
+            <div class="lang-selector">
+                <div class="select-wrap">
+                    <select id="sourceLanguage" aria-label="Source language"></select>
+                </div>
+                <button class="swap-btn" id="swapLanguages" title="Swap languages" aria-label="Swap source and target languages">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="17 1 21 5 17 9"></polyline>
+                        <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                        <polyline points="7 23 3 19 7 15"></polyline>
+                        <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                    </svg>
+                </button>
+                <div class="select-wrap">
+                    <select id="targetLanguage" aria-label="Target language"></select>
+                </div>
+            </div>
+
+            <div class="text-grid">
+                <div class="text-cell">
+                    <div class="cell-top"><span class="field-label" style="margin: 0;">Original text</span></div>
+                    <textarea id="sourceText" class="field" placeholder="Enter text to translate…"
+                        aria-label="Text to translate"></textarea>
+                </div>
+                <div class="text-cell">
+                    <div class="cell-top">
+                        <span class="field-label" style="margin: 0;">Translation</span>
+                        <button class="copy-btn" id="copyBtn" aria-label="Copy translation">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span class="copy-label">Copy</span>
+                        </button>
+                    </div>
+                    <textarea id="targetText" class="field" placeholder="Translation will appear here…"
+                        readonly aria-label="Translation output"></textarea>
+                </div>
+            </div>
+
+            <div class="instrument-foot">
+                <button class="btn btn-ghost" id="clearText">Clear</button>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <button class="btn btn-ghost" id="downloadPdf">Download PDF</button>
+                    <button class="btn btn-primary" id="translateBtn">Translate</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="notes" aria-label="Key features">
+            <div class="note">
+                <h3>Understands context</h3>
+                <p>The language model reads idioms, tone, and sentence structure — not just words.</p>
+            </div>
+            <div class="note">
+                <h3>16 languages</h3>
+                <p>English, Bangla, Arabic, Hindi, Spanish, French, German, Chinese, Japanese, and more.</p>
+            </div>
+            <div class="note">
+                <h3>PDF export</h3>
+                <p>Download a clean PDF of the original and its translation for sharing or archiving.</p>
+            </div>
+        </div>
+
+        <section class="section" aria-label="Popular translation pairs">
+            <h2>Popular pairs</h2>
+            <div class="pairs">
+                <button class="pair-btn" data-from="en" data-to="bn">English to Bangla</button>
+                <button class="pair-btn" data-from="bn" data-to="en">Bangla to English</button>
+                <button class="pair-btn" data-from="en" data-to="ar">English to Arabic</button>
+                <button class="pair-btn" data-from="ar" data-to="en">Arabic to English</button>
+                <button class="pair-btn" data-from="en" data-to="hi">English to Hindi</button>
+                <button class="pair-btn" data-from="hi" data-to="en">Hindi to English</button>
+                <button class="pair-btn" data-from="en" data-to="es">English to Spanish</button>
+                <button class="pair-btn" data-from="en" data-to="fr">English to French</button>
+                <button class="pair-btn" data-from="en" data-to="zh">English to Chinese</button>
+                <button class="pair-btn" data-from="en" data-to="ja">English to Japanese</button>
+                <button class="pair-btn" data-from="en" data-to="de">English to German</button>
+                <button class="pair-btn" data-from="en" data-to="tr">English to Turkish</button>
+            </div>
+        </section>
+
+        <section class="section" aria-label="Frequently asked questions">
+            <h2>Frequently asked questions</h2>
+
+            <details class="faq-item">
+                <summary>How accurate is this AI language translator?</summary>
+                <div class="faq-answer">
+                    It is powered by large language models that understand context, idioms, and nuance —
+                    significantly more accurate than rule-based or older statistical systems. It handles
+                    complex sentence structure and cultural context naturally.
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary>Which languages does this AI translator support?</summary>
+                <div class="faq-answer">
+                    16 languages: English, Bangla, Arabic, Hindi, Spanish, French, German, Chinese (Simplified),
+                    Japanese, Russian, Portuguese, Italian, Korean, Turkish, Vietnamese, and Western Punjabi.
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary>Is this AI translator free to use?</summary>
+                <div class="faq-answer">
+                    Yes, completely free. No account, sign-up, or payment is required. Just open the page,
+                    type your text, and translate.
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary>How do I translate English to Bangla?</summary>
+                <div class="faq-answer">
+                    Select English as the source language and Bangla as the target language. Type or paste
+                    your text into the left box, then press Translate. You will get a natural, accurate
+                    Bangla translation in seconds.
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary>Can I download my translation as a PDF?</summary>
+                <div class="faq-answer">
+                    Yes. After translating, press Download PDF. A formatted PDF containing both the original
+                    text and the translation will be saved to your device.
+                </div>
+            </details>
+        </section>
+
+    </main>
+
+    <footer class="foot">
+        <div class="foot-inner">
+            <span>Using large language models for high-quality, context-aware translation across 16 languages.</span>
+            <span>© 2026 Sajib</span>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        const { jsPDF } = window.jspdf;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const sourceLanguage = document.getElementById('sourceLanguage');
+            const targetLanguage = document.getElementById('targetLanguage');
+            const swapBtn       = document.getElementById('swapLanguages');
+            const sourceText    = document.getElementById('sourceText');
+            const targetText    = document.getElementById('targetText');
+            const translateBtn  = document.getElementById('translateBtn');
+            const clearBtn      = document.getElementById('clearText');
+            const downloadPdfBtn= document.getElementById('downloadPdf');
+            const copyBtn       = document.getElementById('copyBtn');
+
+            const languages = [
+                { code: 'bn', name: 'Bangla' },
+                { code: 'en', name: 'English' },
+                { code: 'ar', name: 'Arabic' },
+                { code: 'hi', name: 'Hindi' },
+                { code: 'es', name: 'Spanish' },
+                { code: 'fr', name: 'French' },
+                { code: 'de', name: 'German' },
+                { code: 'zh', name: 'Chinese (Simplified)' },
+                { code: 'ja', name: 'Japanese' },
+                { code: 'at', name: 'Western Punjabi' },
+                { code: 'ru', name: 'Russian' },
+                { code: 'pt', name: 'Portuguese' },
+                { code: 'it', name: 'Italian' },
+                { code: 'ko', name: 'Korean' },
+                { code: 'tr', name: 'Turkish' },
+                { code: 'vi', name: 'Vietnamese' }
+            ];
+
+            function populateLanguages() {
+                sourceLanguage.innerHTML = '';
+                targetLanguage.innerHTML = '';
+                languages.forEach(lang => {
+                    const optA = document.createElement('option');
+                    optA.value = lang.code; optA.textContent = lang.name;
+                    const optB = optA.cloneNode(true);
+                    sourceLanguage.appendChild(optA);
+                    targetLanguage.appendChild(optB);
+                });
+                sourceLanguage.value = 'en';
+                targetLanguage.value = 'bn';
+            }
+
+            populateLanguages();
+
+            const languageNames = languages.reduce((acc, l) => { acc[l.code] = l.name; return acc; }, {});
+
+            // Swap
+            swapBtn.addEventListener('click', function () {
+                const temp = sourceLanguage.value;
+                sourceLanguage.value = targetLanguage.value;
+                targetLanguage.value = temp;
+                if (sourceText.value || targetText.value) {
+                    const tempText = sourceText.value;
+                    sourceText.value = targetText.value;
+                    targetText.value = tempText;
+                }
+            });
+
+            // Popular pair shortcuts
+            document.querySelectorAll('.pair-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    sourceLanguage.value = btn.dataset.from;
+                    targetLanguage.value = btn.dataset.to;
+                    sourceText.focus();
+                    document.querySelector('.instrument').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            // Copy
+            copyBtn.addEventListener('click', () => {
+                if (!targetText.value) return;
+                navigator.clipboard.writeText(targetText.value).then(() => {
+                    const label = copyBtn.querySelector('.copy-label');
+                    copyBtn.classList.add('copied');
+                    label.textContent = 'Copied';
+                    setTimeout(() => { copyBtn.classList.remove('copied'); label.textContent = 'Copy'; }, 2000);
+                }).catch(console.error);
+            });
+
+            // Clear
+            clearBtn.addEventListener('click', function () {
+                sourceText.value = '';
+                targetText.value = '';
+                sourceText.focus();
+            });
+
+            // Translate
+            translateBtn.addEventListener('click', async function () {
+                const text = sourceText.value.trim();
+                if (!text) { alert('Please enter text to translate'); return; }
+                const fromLang = sourceLanguage.value;
+                const toLang = targetLanguage.value;
+                if (fromLang === toLang) { alert('Source and target languages cannot be the same'); return; }
+
+                translateBtn.disabled = true;
+                translateBtn.innerHTML = 'Translating<span class="spinner"></span>';
+
+                try {
+                    targetText.value = await translateText(text, fromLang, toLang);
+                } catch (error) {
+                    console.error('Translation error:', error);
+                    alert('Translation failed. Please try again.');
+                } finally {
+                    translateBtn.disabled = false;
+                    translateBtn.textContent = 'Translate';
+                }
+            });
+
+            // Download PDF
+            downloadPdfBtn.addEventListener('click', async function () {
+                if (!targetText.value.trim()) { alert('No translation to download'); return; }
+
+                const fromLang = languageNames[sourceLanguage.value];
+                const toLang   = languageNames[targetLanguage.value];
+
+                const container = document.createElement('div');
+                Object.assign(container.style, {
+                    padding: '40px', width: '600px', color: '#000',
+                    background: '#fff', fontFamily: 'Arial, sans-serif',
+                    position: 'fixed', left: '-9999px', top: '0'
+                });
+                container.innerHTML = `
+                    <h1 style="font-size:24px;margin-bottom:20px;border-bottom:2px solid #333;padding-bottom:10px">Translation</h1>
+                    <div style="margin-bottom:30px">
+                        <h3 style="color:#555;font-size:16px">From ${fromLang}:</h3>
+                        <p style="font-size:14px;line-height:1.6;white-space:pre-wrap">${sourceText.value}</p>
+                    </div>
+                    <div>
+                        <h3 style="color:#555;font-size:16px">To ${toLang}:</h3>
+                        <p style="font-size:14px;line-height:1.6;white-space:pre-wrap">${targetText.value}</p>
+                    </div>
+                    <div style="margin-top:40px;font-size:10px;color:#999;text-align:center">Generated by AI Language Translator — translatedby-ai.netlify.app</div>
+                `;
+                document.body.appendChild(container);
+
+                try {
+                    translateBtn.disabled = true;
+                    downloadPdfBtn.textContent = 'Generating PDF…';
+
+                    const canvas = await html2canvas(container, { scale: 2, useCORS: true, logging: false });
+                    const imgData = canvas.toDataURL('image/png');
+                    const doc = new jsPDF({ orientation: 'p', unit: 'mm', format: 'a4' });
+                    const pdfWidth = doc.internal.pageSize.getWidth();
+                    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+                    const pageHeight = doc.internal.pageSize.getHeight();
+
+                    let heightLeft = pdfHeight;
+                    let position = 0;
+                    doc.addImage(imgData, 'PNG', 0, position, pdfWidth, pdfHeight);
+                    heightLeft -= pageHeight;
+
+                    while (heightLeft > 0) {
+                        position = heightLeft - pdfHeight;
+                        doc.addPage();
+                        doc.addImage(imgData, 'PNG', 0, position, pdfWidth, pdfHeight);
+                        heightLeft -= pageHeight;
+                    }
+
+                    doc.save(`translation_${sourceLanguage.value}_to_${targetLanguage.value}.pdf`);
+                } catch (error) {
+                    console.error('PDF generation failed:', error);
+                    alert('Failed to generate PDF. Please try again.');
+                } finally {
+                    document.body.removeChild(container);
+                    translateBtn.disabled = false;
+                    downloadPdfBtn.textContent = 'Download PDF';
+                }
+            });
+
+            // API call
+            async function translateText(text, fromLang, toLang) {
+                const response = await fetch('/.netlify/functions/translate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text, fromLang, toLang })
+                });
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const data = await response.json();
+                return data.translation;
+            }
+        });
+    </script>
+</body>
+</html>

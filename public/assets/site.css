@@ -1,0 +1,385 @@
+/* ═══════════════════════════════════════════════════════════
+   Language Tools — shared design system
+   Concept: the language workbench. Cool graph-paper ground,
+   ink text, one ink color per tool (color = wayfinding).
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+    /* Ground */
+    --paper: #F1F2EC;
+    --card: #FCFBF7;
+    --ink: #1E2320;
+    --ink-soft: #59605A;
+    --ink-faint: #8A9188;
+    --rule: #D5D6CA;
+
+    /* Tool ink — overridden per page */
+    --tool: #1E2320;
+    --tool-deep: #16334A;
+
+    /* Type */
+    --font-display: 'Tiro Bangla', 'Public Sans', serif;
+    --font-body: 'Public Sans', -apple-system, 'Segoe UI', sans-serif;
+
+    --radius: 10px;
+    --maxw: 1040px;
+}
+
+* { box-sizing: border-box; }
+
+html { color-scheme: light; }
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--ink);
+    background-color: var(--paper);
+    background-image:
+        linear-gradient(rgba(30, 35, 32, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 35, 32, 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--ink); color: var(--paper); }
+
+a { color: inherit; }
+
+:focus-visible {
+    outline: 2px solid var(--tool);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* ── Shared chrome ─────────────────────────────────────── */
+
+.topbar {
+    border-bottom: 2px solid var(--ink);
+    background: var(--paper);
+}
+
+.topbar-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 14px 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+    padding-bottom: 12px;
+}
+
+.brand-mark {
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+    background: var(--tool);
+    box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.35);
+    flex-shrink: 0;
+}
+
+.toolstrip {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: 100%;
+}
+
+.toolstrip::-webkit-scrollbar { display: none; }
+
+.toolstrip a {
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    padding: 4px 10px 12px;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.15s;
+}
+
+.toolstrip a:hover { color: var(--ink); }
+
+.toolstrip a.is-here {
+    color: var(--tool);
+    font-weight: 600;
+    border-bottom-color: var(--tool);
+}
+
+/* ── Page scaffolding ──────────────────────────────────── */
+
+.page {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 40px 24px 64px;
+    flex: 1;
+}
+
+.masthead { margin-bottom: 32px; }
+
+.masthead h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(2rem, 4.5vw, 2.75rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+}
+
+.masthead .lede {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    max-width: 34em;
+    margin: 0;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+    list-style: none;
+    padding: 0;
+}
+
+.chips li, .chip {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 3px 12px;
+    white-space: nowrap;
+}
+
+/* ── The instrument (tool panel) ───────────────────────── */
+
+.instrument {
+    background: var(--card);
+    border: 1px solid rgba(30, 35, 32, 0.35);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.instrument-head {
+    padding: 12px 22px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--tool);
+    background: color-mix(in srgb, var(--tool) 8%, var(--card));
+    border-bottom: 1px solid var(--rule);
+}
+
+.instrument-body { padding: 22px; }
+
+.instrument-foot {
+    padding: 16px 22px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* ── Fields ────────────────────────────────────────────── */
+
+.field {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 1.02rem;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 14px 16px;
+    resize: vertical;
+}
+
+.field::placeholder { color: var(--ink-faint); }
+
+.field:focus {
+    outline: none;
+    border-color: var(--tool);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--tool) 15%, transparent);
+}
+
+.field[readonly] { background: color-mix(in srgb, var(--tool) 3%, var(--card)); }
+
+.field-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+}
+
+/* ── Buttons ───────────────────────────────────────────── */
+
+.btn {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: filter 0.15s, background-color 0.15s, color 0.15s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.btn-primary {
+    background: var(--tool);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover:not(:disabled) { filter: brightness(0.9); }
+
+.btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: rgba(30, 35, 32, 0.35);
+}
+
+.btn-ghost:hover:not(:disabled) { background: var(--card); }
+
+.btn-sm {
+    font-size: 0.85rem;
+    padding: 7px 14px;
+    font-weight: 500;
+}
+
+/* ── Status / feedback ─────────────────────────────────── */
+
+.status {
+    font-size: 0.9rem;
+    min-height: 1.4em;
+    margin: 12px 0 0;
+}
+
+.status.ok { color: var(--tool); font-weight: 500; }
+.status.err { color: #A33217; font-weight: 500; }
+
+.spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 0.9s linear infinite;
+    vertical-align: -2px;
+    margin-left: 6px;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Sections & prose ──────────────────────────────────── */
+
+.section { margin-top: 56px; }
+
+.section > h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 0 0 20px;
+}
+
+.prose { color: var(--ink-soft); max-width: 44em; }
+.prose p { margin: 0 0 1em; }
+
+/* ── FAQ (native details) ──────────────────────────────── */
+
+.faq-item { border-top: 1px solid var(--rule); }
+.faq-item:last-child { border-bottom: 1px solid var(--rule); }
+
+.faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 16px 36px 16px 0;
+    font-weight: 500;
+    position: relative;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--ink-faint);
+    transition: transform 0.2s;
+}
+
+.faq-item[open] summary::after { content: "–"; }
+
+.faq-item .faq-answer {
+    padding: 0 36px 18px 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    max-width: 46em;
+}
+
+/* ── Footer ────────────────────────────────────────────── */
+
+.foot {
+    border-top: 2px solid var(--ink);
+    background: var(--paper);
+}
+
+.foot-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+}
+
+.foot-inner a { color: inherit; }
+
+/* ── Reduced motion ────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
