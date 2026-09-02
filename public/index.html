@@ -9,7 +9,8 @@
     <meta name="description" content="A free collection of AI language tools: translate between 16 languages, fix English grammar, humanize AI-generated text, strip unwanted symbols, and practice English conversation. No sign-up.">
     <meta name="author" content="Sajib">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#1E2320">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#1E2320">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#191D1B">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://translatedby-ai.netlify.app/">
@@ -39,6 +40,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+    <script src="assets/site.js"></script>
     <link rel="stylesheet" href="assets/site.css">
 
     <style>
@@ -66,7 +68,7 @@
         .specimen {
             margin-top: 48px;
             background: var(--card);
-            border: 1px solid rgba(30, 35, 32, 0.35);
+            border: 1px solid color-mix(in srgb, var(--ink) 32%, transparent);
             border-radius: var(--radius);
             overflow: hidden;
         }
@@ -184,13 +186,19 @@
                 <span class="brand-mark" aria-hidden="true"></span>
                 Language Tools
             </a>
-            <nav class="toolstrip" aria-label="Tools">
-                <a href="/translate" data-tool="translate">Translate</a>
-                <a href="/grammerfixer" data-tool="grammar">Fix grammar</a>
-                <a href="/humanize" data-tool="humanize">Humanize</a>
-                <a href="/sremover" data-tool="clean">Clean symbols</a>
-                <a href="/chat" data-tool="tutor">Practice English</a>
-            </nav>
+            <div class="topbar-right">
+                <nav class="toolstrip" aria-label="Tools">
+                    <a href="/translate" data-tool="translate">Translate</a>
+                    <a href="/grammerfixer" data-tool="grammar">Fix grammar</a>
+                    <a href="/humanize" data-tool="humanize">Humanize</a>
+                    <a href="/sremover" data-tool="clean">Clean symbols</a>
+                    <a href="/chat" data-tool="tutor">Practice English</a>
+                </nav>
+                <button class="theme-btn" type="button" data-theme-toggle aria-label="Switch to dark mode" title="Switch to dark mode">
+                    <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="6.34" y2="6.34"></line><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="6.34" y2="17.66"></line><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"></line></svg>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -212,24 +220,24 @@
                 <span class="who" style="color: var(--ink-soft);">Original</span>
                 <span class="what">“I has went to the store yesterday and buyed many things.”</span>
             </div>
-            <div class="specimen-row" style="--tool: #BF3B1F;">
-                <span class="who" style="color: #BF3B1F;">Fix grammar</span>
+            <div class="specimen-row" style="--tool: var(--ink-grammar);">
+                <span class="who" style="color: var(--ink-grammar);">Fix grammar</span>
                 <span class="what">“I went to the store yesterday and bought many things.”</span>
             </div>
-            <div class="specimen-row" style="--tool: #2149C6;">
-                <span class="who" style="color: #2149C6;">Translate</span>
+            <div class="specimen-row" style="--tool: var(--ink-translate);">
+                <span class="who" style="color: var(--ink-translate);">Translate</span>
                 <span class="what" lang="bn">“আমি গতকাল দোকানে গিয়েছিলাম এবং অনেক কিছু কিনেছি।”</span>
             </div>
-            <div class="specimen-row" style="--tool: #2A6E45;">
-                <span class="who" style="color: #2A6E45;">Humanize</span>
+            <div class="specimen-row" style="--tool: var(--ink-humanize);">
+                <span class="who" style="color: var(--ink-humanize);">Humanize</span>
                 <span class="what">“So I hit the store yesterday and came home with way too much stuff.”</span>
             </div>
-            <div class="specimen-row" style="--tool: #555B56;">
-                <span class="who" style="color: #555B56;">Clean symbols</span>
+            <div class="specimen-row" style="--tool: var(--ink-clean);">
+                <span class="who" style="color: var(--ink-clean);">Clean symbols</span>
                 <span class="what">“*Great deals* at our #store today!”<span class="arrow">→</span>“Great deals at our store today!”</span>
             </div>
-            <div class="specimen-row" style="--tool: #9A6700;">
-                <span class="who" style="color: #9A6700;">Practice English</span>
+            <div class="specimen-row" style="--tool: var(--ink-tutor);">
+                <span class="who" style="color: var(--ink-tutor);">Practice English</span>
                 <span class="what">You write “I has went to the store.” The tutor replies and gently shows you: “I went to the store.”</span>
             </div>
         </section>
@@ -238,31 +246,31 @@
         <section class="section" aria-label="The tools">
             <h2>The tools</h2>
             <div class="ledger">
-                <a class="ledger-row" href="/translate" style="--tool: #2149C6;">
+                <a class="ledger-row" href="/translate" style="--tool: var(--ink-translate);">
                     <span class="ledger-swatch" aria-hidden="true"></span>
                     <span class="ledger-name">Translate</span>
                     <span class="ledger-desc">Move text between 16 languages, keeping meaning, tone, and cultural context.</span>
                     <span class="ledger-open">Open</span>
                 </a>
-                <a class="ledger-row" href="/grammerfixer" style="--tool: #BF3B1F;">
+                <a class="ledger-row" href="/grammerfixer" style="--tool: var(--ink-grammar);">
                     <span class="ledger-swatch" aria-hidden="true"></span>
                     <span class="ledger-name">Fix grammar</span>
                     <span class="ledger-desc">Correct grammar, spelling, and punctuation in English without changing your voice.</span>
                     <span class="ledger-open">Open</span>
                 </a>
-                <a class="ledger-row" href="/humanize" style="--tool: #2A6E45;">
+                <a class="ledger-row" href="/humanize" style="--tool: var(--ink-humanize);">
                     <span class="ledger-swatch" aria-hidden="true"></span>
                     <span class="ledger-name">Humanize</span>
                     <span class="ledger-desc">Rewrite AI-generated text so it reads like a person wrote it, not a model.</span>
                     <span class="ledger-open">Open</span>
                 </a>
-                <a class="ledger-row" href="/sremover" style="--tool: #555B56;">
+                <a class="ledger-row" href="/sremover" style="--tool: var(--ink-clean);">
                     <span class="ledger-swatch" aria-hidden="true"></span>
                     <span class="ledger-name">Clean symbols</span>
                     <span class="ledger-desc">Strip asterisks and hashtags out of pasted text — instantly, right in your browser.</span>
                     <span class="ledger-open">Open</span>
                 </a>
-                <a class="ledger-row" href="/chat" style="--tool: #9A6700;">
+                <a class="ledger-row" href="/chat" style="--tool: var(--ink-tutor);">
                     <span class="ledger-swatch" aria-hidden="true"></span>
                     <span class="ledger-name">Practice English</span>
                     <span class="ledger-desc">Chat with a tutor who keeps the conversation going and quietly corrects your mistakes.</span>

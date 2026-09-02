@@ -12,10 +12,25 @@
     --ink-soft: #59605A;
     --ink-faint: #8A9188;
     --rule: #D5D6CA;
+    --status-err: #A33217;
+
+    /* Tool inks — text, borders, accents; adapted per theme */
+    --ink-translate: #2149C6;
+    --ink-grammar: #BF3B1F;
+    --ink-humanize: #2A6E45;
+    --ink-clean: #555B56;
+    --ink-tutor: #9A6700;
+
+    /* Solid tool colors — button/bubble backgrounds; constant across themes */
+    --solid-translate: #2149C6;
+    --solid-grammar: #BF3B1F;
+    --solid-humanize: #2A6E45;
+    --solid-clean: #555B56;
+    --solid-tutor: #9A6700;
 
     /* Tool ink — overridden per page */
-    --tool: #1E2320;
-    --tool-deep: #16334A;
+    --tool: var(--ink);
+    --tool-solid: var(--ink);
 
     /* Type */
     --font-display: 'Tiro Bangla', 'Public Sans', serif;
@@ -23,11 +38,50 @@
 
     --radius: 10px;
     --maxw: 1040px;
+
+    color-scheme: light;
+}
+
+/* Dark palette: follows the system unless the visitor has toggled explicitly */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --paper: #191D1B;
+        --card: #212623;
+        --ink: #E9EAE3;
+        --ink-soft: #A9AFA8;
+        --ink-faint: #7A817A;
+        --rule: #3B423D;
+        --status-err: #F08A6E;
+
+        --ink-translate: #8FA9F2;
+        --ink-grammar: #EC8062;
+        --ink-humanize: #6FBF90;
+        --ink-clean: #B4BAB3;
+        --ink-tutor: #E0A94B;
+
+        color-scheme: dark;
+    }
+}
+
+:root[data-theme="dark"] {
+    --paper: #191D1B;
+    --card: #212623;
+    --ink: #E9EAE3;
+    --ink-soft: #A9AFA8;
+    --ink-faint: #7A817A;
+    --rule: #3B423D;
+    --status-err: #F08A6E;
+
+    --ink-translate: #8FA9F2;
+    --ink-grammar: #EC8062;
+    --ink-humanize: #6FBF90;
+    --ink-clean: #B4BAB3;
+    --ink-tutor: #E0A94B;
+
+    color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
-
-html { color-scheme: light; }
 
 body {
     margin: 0;
@@ -37,8 +91,8 @@ body {
     color: var(--ink);
     background-color: var(--paper);
     background-image:
-        linear-gradient(rgba(30, 35, 32, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(30, 35, 32, 0.05) 1px, transparent 1px);
+        linear-gradient(color-mix(in srgb, var(--ink) 5%, transparent) 1px, transparent 1px),
+        linear-gradient(90deg, color-mix(in srgb, var(--ink) 5%, transparent) 1px, transparent 1px);
     background-size: 32px 32px;
     min-height: 100vh;
     display: flex;
@@ -100,6 +154,7 @@ a { color: inherit; }
     overflow-x: auto;
     scrollbar-width: none;
     max-width: 100%;
+    min-width: 0;
 }
 
 .toolstrip::-webkit-scrollbar { display: none; }
@@ -122,6 +177,43 @@ a { color: inherit; }
     color: var(--tool);
     font-weight: 600;
     border-bottom-color: var(--tool);
+}
+
+/* ── Theme toggle ──────────────────────────────────────── */
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.theme-btn {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1.5px solid color-mix(in srgb, var(--ink) 32%, transparent);
+    background: transparent;
+    color: var(--ink-soft);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 12px;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.theme-btn:hover { color: var(--ink); border-color: var(--ink-faint); }
+
+.theme-btn .icon-sun { display: none; }
+
+:root[data-theme="dark"] .theme-btn .icon-moon { display: none; }
+:root[data-theme="dark"] .theme-btn .icon-sun { display: block; }
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .theme-btn .icon-moon { display: none; }
+    :root:not([data-theme="light"]) .theme-btn .icon-sun { display: block; }
 }
 
 /* ── Page scaffolding ──────────────────────────────────── */
@@ -176,7 +268,7 @@ a { color: inherit; }
 
 .instrument {
     background: var(--card);
-    border: 1px solid rgba(30, 35, 32, 0.35);
+    border: 1px solid color-mix(in srgb, var(--ink) 32%, transparent);
     border-radius: var(--radius);
     overflow: hidden;
 }
@@ -258,7 +350,7 @@ a { color: inherit; }
 .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 
 .btn-primary {
-    background: var(--tool);
+    background: var(--tool-solid);
     color: #FFFFFF;
 }
 
@@ -267,7 +359,7 @@ a { color: inherit; }
 .btn-ghost {
     background: transparent;
     color: var(--ink);
-    border-color: rgba(30, 35, 32, 0.35);
+    border-color: color-mix(in srgb, var(--ink) 32%, transparent);
 }
 
 .btn-ghost:hover:not(:disabled) { background: var(--card); }
@@ -287,7 +379,7 @@ a { color: inherit; }
 }
 
 .status.ok { color: var(--tool); font-weight: 500; }
-.status.err { color: #A33217; font-weight: 500; }
+.status.err { color: var(--status-err); font-weight: 500; }
 
 .spinner {
     display: inline-block;
